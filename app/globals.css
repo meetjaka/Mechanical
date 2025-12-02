@@ -1,26 +1,167 @@
 @import "tailwindcss";
 
 :root {
+  /* Professional Color Palette - Solid Colors Only */
+  --navy: #1A2332;
+  --blue-primary: #2563EB;
+  --blue-bright: #3B82F6;
+  --steel-gray: #475569;
+  --light-gray: #F1F5F9;
+  --charcoal: #0F172A;
+  --orange: #EA580C;
+  --yellow: #EAB308;
+  --green: #16A34A;
+  --silver: #94A3B8;
+  
+  /* Light Mode Colors (Default) */
   --background: #ffffff;
-  --foreground: #171717;
+  --background-secondary: #F1F5F9;
+  --foreground: #0F172A;
+  --foreground-muted: #475569;
+  --border: #E2E8F0;
+  --card-bg: #ffffff;
+  --nav-bg: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] {
+  /* Dark Mode Colors */
+  --background: #1A2332;
+  --background-secondary: #0F172A;
+  --foreground: #ffffff;
+  --foreground-muted: #94A3B8;
+  --border: #475569;
+  --card-bg: #1A2332;
+  --nav-bg: #1A2332;
+  --shadow: rgba(0, 0, 0, 0.25);
+  --shadow-hover: rgba(0, 0, 0, 0.35);
 }
 
 @theme inline {
+  --color-navy: var(--navy);
+  --color-blue-primary: var(--blue-primary);
+  --color-blue-bright: var(--blue-bright);
+  --color-steel-gray: var(--steel-gray);
+  --color-light-gray: var(--light-gray);
+  --color-charcoal: var(--charcoal);
+  --color-orange: var(--orange);
+  --color-yellow: var(--yellow);
+  --color-green: var(--green);
+  --color-silver: var(--silver);
   --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
   --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-border: var(--border);
+  --color-card-bg: var(--card-bg);
+  --color-nav-bg: var(--nav-bg);
+  --color-shadow: var(--shadow);
+  --color-shadow-hover: var(--shadow-hover);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--border);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blue-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue-bright);
+}
+
+/* Professional shadow utilities */
+.shadow-subtle {
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.shadow-card {
+  box-shadow: 0 4px 6px -1px var(--shadow), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-lifted {
+  box-shadow: 0 10px 25px -3px var(--shadow-hover), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-nav {
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+/* Focus styles for accessibility */
+.focus-ring:focus {
+  outline: 2px solid var(--blue-primary);
+  outline-offset: 2px;
+}
+
+/* Professional button styles */
+.btn-primary {
+  background-color: var(--blue-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--blue-bright);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--blue-primary);
+  border: 2px solid var(--blue-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--light-gray);
+  transform: translateY(-1px);
+}
+
+.btn-accent {
+  background-color: var(--orange);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-accent:hover {
+  background-color: #DC5808;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.4);
 }

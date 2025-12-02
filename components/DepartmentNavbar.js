@@ -1,11 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { ChevronDown, Menu, X, ExternalLink } from "lucide-react";
 
 export default function DepartmentNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const researchLabsDropdown = [
     { name: "Grants & Consultancy", href: "/research-labs/grants-consultancy" },
@@ -65,205 +76,154 @@ export default function DepartmentNavbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'bg-white shadow-nav border-b border-light-gray' 
+          : 'bg-white/95 backdrop-blur-sm'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
           {/* Left Section: Department Text */}
-          <Link href="/" className="flex items-center cursor-pointer">
-            <div>
-              <p className="text-sm text-gray-600 font-normal">
-                CHAMOS Matrusanstha Department of
-              </p>
-              <p className="text-xl font-bold text-[#004D83]">
-                Mechanical Engineering
-              </p>
-            </div>
-          </Link>
+          <div className="transition-transform duration-200 hover:scale-105">
+            <Link href="/" className="flex items-center cursor-pointer group">
+              <div>
+                <p className="text-sm text-gray-dark font-medium transition-colors duration-300 group-hover:text-gray-darker">
+                  CHAMOS Matrusanstha Department of
+                </p>
+                <p className="text-xl font-bold text-navy transition-colors duration-300 group-hover:text-blue-primary">
+                  Mechanical Engineering
+                </p>
+              </div>
+            </Link>
+          </div>
 
-            {/* Desktop Navigation Menu */}
+          {/* Desktop Navigation Menu */}
           <div className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => (
               <div
                 key={item.name}
                 className="relative"
-                onMouseEnter={() =>
-                  item.hasDropdown && setOpenDropdown(item.name)
-                }
+                onMouseEnter={() => item.hasDropdown && setOpenDropdown(item.name)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <Link
                   href={item.href}
-                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 inline-flex items-center gap-1 ${
+                  className={`relative px-4 py-3 text-sm font-semibold transition-all duration-200 inline-flex items-center gap-2 rounded-lg ${
                     item.active
-                      ? "text-[#004D83] bg-blue-50"
-                      : "text-gray-600 hover:text-[#004D83] hover:bg-gray-50"
+                      ? "text-blue-primary bg-blue-primary/10"
+                      : "text-gray-dark hover:text-blue-primary hover:bg-light-gray"
                   }`}
                 >
-                  {item.name}
+                  <span className="font-semibold">{item.name}</span>
                   {item.hasDropdown && (
-                    <svg
-                      className={`w-4 h-4 transition-transform duration-200 ${
-                        openDropdown === item.name ? "rotate-180" : ""
+                    <ChevronDown 
+                      size={16} 
+                      className={`transition-transform duration-200 ${
+                        openDropdown === item.name ? 'rotate-180' : ''
                       }`}
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path d="M19 9l-7 7-7-7" />
-                    </svg>
+                    />
                   )}
                 </Link>
 
-                {/* Dropdown Menu */}
-                {item.hasDropdown &&
-                  item.dropdownItems &&
-                  openDropdown === item.name && (
-                    <div className="absolute top-full left-0 mt-0 w-80 bg-white shadow-xl border border-gray-200 rounded-xl overflow-hidden z-20 animate-in slide-in-from-top-2 duration-200">
-                      <div className="p-2 pt-3">
-                        {item.dropdownItems.map((dropdownItem, index) =>
-                          dropdownItem.isExternal ? (
+                {/* Professional Dropdown Menu */}
+                {openDropdown === item.name && item.hasDropdown && (
+                  <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lifted border border-light-gray overflow-hidden">
+                    <div className="p-2">
+                      {item.dropdownItems.map((dropdownItem) => (
+                        <div key={dropdownItem.name}>
+                          {dropdownItem.isExternal ? (
                             <a
-                              key={dropdownItem.name}
                               href={dropdownItem.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center px-3 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#004D83] transition-colors rounded-lg group"
+                              className="flex items-center px-4 py-3 text-sm text-gray-dark hover:text-blue-primary hover:bg-light-gray transition-all duration-200 rounded-md group"
                             >
-                              <span className="flex-1">
-                                {dropdownItem.name}
-                              </span>
-                              <svg
-                                className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                                />
-                              </svg>
+                              <span className="flex-1 font-medium">{dropdownItem.name}</span>
+                              <ExternalLink 
+                                size={16} 
+                                className="opacity-60 group-hover:opacity-100 transition-opacity" 
+                              />
                             </a>
                           ) : (
                             <Link
-                              key={dropdownItem.name}
                               href={dropdownItem.href}
-                              className="block px-3 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#004D83] transition-colors rounded-lg"
+                              className="flex items-center px-4 py-3 text-sm text-gray-dark hover:text-blue-primary hover:bg-light-gray transition-all duration-200 rounded-md font-medium"
                             >
                               {dropdownItem.name}
                             </Link>
-                          )
-                        )}
-                      </div>
+                          )}
+                        </div>
+                      ))}
                     </div>
-                  )}
+                  </div>
+                )}
               </div>
             ))}
           </div>
 
-          {/* Mobile Hamburger Button */}
-          <div className="lg:hidden">
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-gray-600 hover:text-[#004D83] hover:bg-gray-50 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="p-2 text-gray-dark hover:text-blue-primary bg-light-gray hover:bg-gray-medium rounded-lg transition-all duration-200"
               aria-label="Toggle menu"
             >
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {mobileMenuOpen ? (
-                  <path d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Professional Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white/95 backdrop-blur-sm border-t border-gray-100">
-          <div className="px-4 py-4 space-y-2">
+        <div className="lg:hidden bg-white border-t border-light-gray shadow-lifted">
+          <div className="px-6 py-6 space-y-2">
             {navItems.map((item) => (
               <div key={item.name}>
                 <Link
                   href={item.href}
-                  className={`flex items-center justify-between px-4 py-3 text-base font-medium rounded-lg transition-colors duration-200 ${
+                  className={`flex items-center justify-between px-4 py-4 text-base font-semibold rounded-lg transition-all duration-200 ${
                     item.active
-                      ? "text-[#004D83] bg-blue-50"
-                      : "text-gray-700 hover:text-[#004D83] hover:bg-gray-50"
+                      ? "text-blue-primary bg-blue-primary/10"
+                      : "text-gray-dark hover:text-blue-primary hover:bg-light-gray"
                   }`}
                   onClick={() => !item.hasDropdown && setMobileMenuOpen(false)}
                 >
                   <span>{item.name}</span>
                   {item.hasDropdown && (
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
+                    <ChevronDown size={20} />
                   )}
                 </Link>
+                
                 {/* Mobile Dropdown Items */}
                 {item.hasDropdown && item.dropdownItems && (
-                  <div className="ml-4 mt-2 space-y-1">
-                    {item.dropdownItems.map((dropdownItem) =>
-                      dropdownItem.isExternal ? (
-                        <a
-                          key={dropdownItem.name}
-                          href={dropdownItem.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center px-4 py-2.5 text-sm text-gray-600 hover:text-[#004D83] hover:bg-blue-50 rounded-lg transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          <span className="flex-1">{dropdownItem.name}</span>
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
+                  <div className="ml-6 mt-2 space-y-1 border-l-2 border-light-gray pl-4">
+                    {item.dropdownItems.map((dropdownItem) => (
+                      <div key={dropdownItem.name}>
+                        {dropdownItem.isExternal ? (
+                          <a
+                            href={dropdownItem.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center px-4 py-3 text-sm text-gray-dark hover:text-blue-primary rounded-lg transition-colors group"
+                            onClick={() => setMobileMenuOpen(false)}
                           >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                            />
-                          </svg>
-                        </a>
-                      ) : (
-                        <Link
-                          key={dropdownItem.name}
-                          href={dropdownItem.href}
-                          className="block px-4 py-2.5 text-sm text-gray-600 hover:text-[#004D83] hover:bg-blue-50 rounded-lg transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {dropdownItem.name}
-                        </Link>
-                      )
-                    )}
+                            <span className="flex-1 font-medium">{dropdownItem.name}</span>
+                            <ExternalLink size={16} className="opacity-60 group-hover:opacity-100" />
+                          </a>
+                        ) : (
+                          <Link
+                            href={dropdownItem.href}
+                            className="block px-4 py-3 text-sm text-gray-dark hover:text-blue-primary rounded-lg transition-colors font-medium"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {dropdownItem.name}
+                          </Link>
+                        )}
+                      </div>
+                    ))}
                   </div>
                 )}
               </div>
@@ -274,3 +234,4 @@ export default function DepartmentNavbar() {
     </nav>
   );
 }
+
