@@ -5,7 +5,7 @@ export default function TestingFacilities() {
     <div>
       <DepartmentNavbar />
 
-      <main className="bg-white">
+      <main className="bg-white pt-16">
         {/* Page Header */}
         <div className="bg-gradient-to-r from-[#004D83] to-[#0066A1] py-12">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">

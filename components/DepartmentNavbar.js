@@ -76,11 +76,11 @@ export default function DepartmentNavbar() {
   ];
 
   return (
-    <nav 
+    <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white shadow-nav border-b border-light-gray' 
-          : 'bg-white/95 backdrop-blur-sm'
+        scrolled
+          ? "bg-white shadow-nav border-b border-light-gray"
+          : "bg-white/95 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -102,12 +102,7 @@ export default function DepartmentNavbar() {
           {/* Desktop Navigation Menu */}
           <div className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => (
-              <div
-                key={item.name}
-                className="relative"
-                onMouseEnter={() => item.hasDropdown && setOpenDropdown(item.name)}
-                onMouseLeave={() => setOpenDropdown(null)}
-              >
+              <div key={item.name} className="relative group">
                 <Link
                   href={item.href}
                   className={`relative px-4 py-3 text-sm font-semibold transition-all duration-200 inline-flex items-center gap-2 rounded-lg ${
@@ -118,18 +113,16 @@ export default function DepartmentNavbar() {
                 >
                   <span className="font-semibold">{item.name}</span>
                   {item.hasDropdown && (
-                    <ChevronDown 
-                      size={16} 
-                      className={`transition-transform duration-200 ${
-                        openDropdown === item.name ? 'rotate-180' : ''
-                      }`}
+                    <ChevronDown
+                      size={16}
+                      className="transition-transform duration-200 group-hover:rotate-180"
                     />
                   )}
                 </Link>
 
                 {/* Professional Dropdown Menu */}
-                {openDropdown === item.name && item.hasDropdown && (
-                  <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lifted border border-light-gray overflow-hidden">
+                {item.hasDropdown && (
+                  <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lifted border border-light-gray overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                     <div className="p-2">
                       {item.dropdownItems.map((dropdownItem) => (
                         <div key={dropdownItem.name}>
@@ -138,12 +131,14 @@ export default function DepartmentNavbar() {
                               href={dropdownItem.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center px-4 py-3 text-sm text-gray-dark hover:text-blue-primary hover:bg-light-gray transition-all duration-200 rounded-md group"
+                              className="flex items-center px-4 py-3 text-sm text-gray-dark hover:text-blue-primary hover:bg-light-gray transition-all duration-200 rounded-md group/item"
                             >
-                              <span className="flex-1 font-medium">{dropdownItem.name}</span>
-                              <ExternalLink 
-                                size={16} 
-                                className="opacity-60 group-hover:opacity-100 transition-opacity" 
+                              <span className="flex-1 font-medium">
+                                {dropdownItem.name}
+                              </span>
+                              <ExternalLink
+                                size={16}
+                                className="opacity-60 group-hover/item:opacity-100 transition-opacity"
                               />
                             </a>
                           ) : (
@@ -192,11 +187,9 @@ export default function DepartmentNavbar() {
                   onClick={() => !item.hasDropdown && setMobileMenuOpen(false)}
                 >
                   <span>{item.name}</span>
-                  {item.hasDropdown && (
-                    <ChevronDown size={20} />
-                  )}
+                  {item.hasDropdown && <ChevronDown size={20} />}
                 </Link>
-                
+
                 {/* Mobile Dropdown Items */}
                 {item.hasDropdown && item.dropdownItems && (
                   <div className="ml-6 mt-2 space-y-1 border-l-2 border-light-gray pl-4">
@@ -210,8 +203,13 @@ export default function DepartmentNavbar() {
                             className="flex items-center px-4 py-3 text-sm text-gray-dark hover:text-blue-primary rounded-lg transition-colors group"
                             onClick={() => setMobileMenuOpen(false)}
                           >
-                            <span className="flex-1 font-medium">{dropdownItem.name}</span>
-                            <ExternalLink size={16} className="opacity-60 group-hover:opacity-100" />
+                            <span className="flex-1 font-medium">
+                              {dropdownItem.name}
+                            </span>
+                            <ExternalLink
+                              size={16}
+                              className="opacity-60 group-hover:opacity-100"
+                            />
                           </a>
                         ) : (
                           <Link
@@ -234,4 +232,3 @@ export default function DepartmentNavbar() {
     </nav>
   );
 }
-

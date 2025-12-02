@@ -45,7 +45,7 @@ export default function AboutPage() {
     <div className="bg-gray-50">
       <DepartmentNavbar />
 
-      <main>
+      <main className="pt-16">
         {/* Header Section */}
         <div className="bg-gradient-to-br from-[#004D83] to-[#003666] text-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-20">

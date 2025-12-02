@@ -6,7 +6,7 @@ export default function FestoPage() {
     <div className="min-h-screen bg-white">
       <DepartmentNavbar />
 
-      <main>
+      <main className="pt-16">
         {/* Hero Section */}
         <div className="bg-[#004D83] text-white py-16">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
