@@ -77,22 +77,22 @@ export default function DepartmentNavbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
         scrolled
-          ? "bg-white shadow-nav border-b border-light-gray"
-          : "bg-white/95 backdrop-blur-sm"
+          ? "shadow-md border-b border-gray-300"
+          : "shadow-sm border-b border-gray-200"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
           {/* Left Section: Department Text */}
           <div className="transition-transform duration-200 hover:scale-105">
             <Link href="/" className="flex items-center cursor-pointer group">
               <div>
-                <p className="text-sm text-gray-dark font-medium transition-colors duration-300 group-hover:text-gray-darker">
+                <p className="text-xs sm:text-sm text-gray-600 font-medium transition-colors duration-300 group-hover:text-gray-800">
                   CHAMOS Matrusanstha Department of
                 </p>
-                <p className="text-xl font-bold text-navy transition-colors duration-300 group-hover:text-blue-primary">
+                <p className="text-base sm:text-lg md:text-xl font-bold text-[#004D83] transition-colors duration-300 group-hover:text-[#0066A1]">
                   Mechanical Engineering
                 </p>
               </div>
@@ -107,8 +107,8 @@ export default function DepartmentNavbar() {
                   href={item.href}
                   className={`relative px-4 py-3 text-sm font-semibold transition-all duration-200 inline-flex items-center gap-2 rounded-lg ${
                     item.active
-                      ? "text-blue-primary bg-blue-primary/10"
-                      : "text-gray-dark hover:text-blue-primary hover:bg-light-gray"
+                      ? "text-[#004D83] bg-blue-50"
+                      : "text-gray-700 hover:text-[#004D83] hover:bg-gray-50"
                   }`}
                 >
                   <span className="font-semibold">{item.name}</span>
@@ -122,7 +122,7 @@ export default function DepartmentNavbar() {
 
                 {/* Professional Dropdown Menu */}
                 {item.hasDropdown && (
-                  <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lifted border border-light-gray overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                     <div className="p-2">
                       {item.dropdownItems.map((dropdownItem) => (
                         <div key={dropdownItem.name}>
@@ -131,7 +131,7 @@ export default function DepartmentNavbar() {
                               href={dropdownItem.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center px-4 py-3 text-sm text-gray-dark hover:text-blue-primary hover:bg-light-gray transition-all duration-200 rounded-md group/item"
+                              className="flex items-center px-4 py-3 text-sm text-gray-700 hover:text-[#004D83] hover:bg-gray-50 transition-all duration-200 rounded-md group/item"
                             >
                               <span className="flex-1 font-medium">
                                 {dropdownItem.name}
@@ -144,7 +144,7 @@ export default function DepartmentNavbar() {
                           ) : (
                             <Link
                               href={dropdownItem.href}
-                              className="flex items-center px-4 py-3 text-sm text-gray-dark hover:text-blue-primary hover:bg-light-gray transition-all duration-200 rounded-md font-medium"
+                              className="flex items-center px-4 py-3 text-sm text-gray-700 hover:text-[#004D83] hover:bg-gray-50 transition-all duration-200 rounded-md font-medium"
                             >
                               {dropdownItem.name}
                             </Link>
@@ -162,7 +162,7 @@ export default function DepartmentNavbar() {
           <div className="lg:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-gray-dark hover:text-blue-primary bg-light-gray hover:bg-gray-medium rounded-lg transition-all duration-200"
+              className="p-2 text-gray-700 hover:text-[#004D83] bg-gray-100 hover:bg-gray-200 rounded-lg transition-all duration-200"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -173,7 +173,7 @@ export default function DepartmentNavbar() {
 
       {/* Professional Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-light-gray shadow-lifted">
+        <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
           <div className="px-6 py-6 space-y-2">
             {navItems.map((item) => (
               <div key={item.name}>
@@ -181,8 +181,8 @@ export default function DepartmentNavbar() {
                   href={item.href}
                   className={`flex items-center justify-between px-4 py-4 text-base font-semibold rounded-lg transition-all duration-200 ${
                     item.active
-                      ? "text-blue-primary bg-blue-primary/10"
-                      : "text-gray-dark hover:text-blue-primary hover:bg-light-gray"
+                      ? "text-[#004D83] bg-blue-50"
+                      : "text-gray-700 hover:text-[#004D83] hover:bg-gray-50"
                   }`}
                   onClick={() => !item.hasDropdown && setMobileMenuOpen(false)}
                 >
@@ -192,7 +192,7 @@ export default function DepartmentNavbar() {
 
                 {/* Mobile Dropdown Items */}
                 {item.hasDropdown && item.dropdownItems && (
-                  <div className="ml-6 mt-2 space-y-1 border-l-2 border-light-gray pl-4">
+                  <div className="ml-6 mt-2 space-y-1 border-l-2 border-gray-200 pl-4">
                     {item.dropdownItems.map((dropdownItem) => (
                       <div key={dropdownItem.name}>
                         {dropdownItem.isExternal ? (
@@ -200,7 +200,7 @@ export default function DepartmentNavbar() {
                             href={dropdownItem.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center px-4 py-3 text-sm text-gray-dark hover:text-blue-primary rounded-lg transition-colors group"
+                            className="flex items-center px-4 py-3 text-sm text-gray-700 hover:text-[#004D83] rounded-lg transition-colors group"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             <span className="flex-1 font-medium">
@@ -214,7 +214,7 @@ export default function DepartmentNavbar() {
                         ) : (
                           <Link
                             href={dropdownItem.href}
-                            className="block px-4 py-3 text-sm text-gray-dark hover:text-blue-primary rounded-lg transition-colors font-medium"
+                            className="block px-4 py-3 text-sm text-gray-700 hover:text-[#004D83] rounded-lg transition-colors font-medium"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {dropdownItem.name}

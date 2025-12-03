@@ -3,30 +3,35 @@
 import dynamic from "next/dynamic";
 import DepartmentNavbar from "@/components/DepartmentNavbar";
 import HeroCarousel from "@/components/HeroCarousel";
-import { ProfessionalCard, FeatureCard, StatCard, VisionMissionCard } from "@/components/ModernCards";
+import {
+  ProfessionalCard,
+  FeatureCard,
+  StatCard,
+  VisionMissionCard,
+} from "@/components/ModernCards";
 // Removed animation imports for clean professional design
 
 // Dynamic imports for performance optimization
-const BackToTop = dynamic(() => import("@/components/BackToTop"), { 
+const BackToTop = dynamic(() => import("@/components/BackToTop"), {
   ssr: false,
-  loading: () => null
+  loading: () => null,
 });
 const Footer = dynamic(() => import("@/components/Footer"));
-import { 
-  MessageSquare, 
-  BookOpen, 
-  Users, 
-  UserCheck, 
-  FileText, 
-  Globe, 
-  Monitor, 
-  BarChart, 
+import {
+  MessageSquare,
+  BookOpen,
+  Users,
+  UserCheck,
+  FileText,
+  Globe,
+  Monitor,
+  BarChart,
   Award,
   Target,
   Eye,
   Download,
   ExternalLink,
-  Zap
+  Zap,
 } from "lucide-react";
 
 export default function Home() {
@@ -36,23 +41,23 @@ export default function Home() {
       <HeroCarousel />
 
       {/* Download Brochure Section */}
-      <div className="bg-light-gray border-b border-gray-light">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8">
-          <ProfessionalCard className="flex items-center justify-between group">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 flex items-center justify-center bg-orange/10 rounded-xl text-orange group-hover:scale-110 transition-transform duration-300">
+      <div className="bg-gray-50 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+          <ProfessionalCard className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 group">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="w-12 h-12 flex items-center justify-center bg-orange-500/10 rounded-xl text-orange-500 group-hover:scale-110 transition-transform duration-300">
                 <Download size={24} />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-navy group-hover:text-blue-primary transition-colors duration-300">
+                <h3 className="text-base sm:text-lg font-bold text-[#004D83] group-hover:text-[#0066A1] transition-colors duration-300">
                   Department Brochure
                 </h3>
-                <p className="text-gray-dark text-sm">
+                <p className="text-gray-600 text-xs sm:text-sm">
                   Download our comprehensive brochure with all program details
                 </p>
               </div>
             </div>
-            
+
             <a
               href="https://drive.google.com/file/d/your-brochure-file-id/view"
               target="_blank"
@@ -68,17 +73,18 @@ export default function Home() {
 
       <main className="bg-white relative z-10">
         {/* Best Practices, Vision, Mission & Program Objectives Section */}
-        <div className="py-16 md:py-20 bg-light-gray">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="py-12 sm:py-16 md:py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Best Practices */}
-            <div className="mb-16">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-4">
+            <div className="mb-12 sm:mb-16">
+              <div className="text-center mb-8 sm:mb-12">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#004D83] mb-4">
                   BEST PRACTICES
                 </h2>
-                <div className="w-32 h-1 bg-blue-primary mx-auto rounded-full"></div>
-                <p className="text-gray-dark text-lg mt-6 max-w-2xl mx-auto">
-                  Innovative approaches that drive excellence in mechanical engineering education and research
+                <div className="w-24 sm:w-32 h-1 bg-[#004D83] mx-auto rounded-full"></div>
+                <p className="text-gray-600 text-sm sm:text-base md:text-lg mt-4 sm:mt-6 max-w-2xl mx-auto px-4">
+                  Innovative approaches that drive excellence in mechanical
+                  engineering education and research
                 </p>
               </div>
             </div>
@@ -192,15 +198,16 @@ export default function Home() {
         </div>
 
         {/* Student's Chapters Section */}
-        <div className="py-16 md:py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-4">
+        <div className="py-12 sm:py-16 md:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#004D83] mb-4">
                 STUDENT CHAPTERS
               </h2>
-              <div className="w-32 h-1 bg-blue-primary mx-auto rounded-full"></div>
-              <p className="text-gray-dark text-lg mt-6 max-w-2xl mx-auto">
-                Student-led organizations fostering technical excellence and professional development
+              <div className="w-24 sm:w-32 h-1 bg-[#004D83] mx-auto rounded-full"></div>
+              <p className="text-gray-600 text-sm sm:text-base md:text-lg mt-4 sm:mt-6 max-w-2xl mx-auto px-4">
+                Student-led organizations fostering technical excellence and
+                professional development
               </p>
             </div>
 
@@ -209,7 +216,7 @@ export default function Home() {
               <ProfessionalCard className="group text-center">
                 <div className="space-y-6">
                   {/* Logo Section */}
-                  <div className="relative p-6 bg-blue-primary/5 rounded-lg group-hover:bg-blue-primary/10 transition-all duration-300">
+                  <div className="relative p-6 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition-all duration-300">
                     <img
                       src="/SAECLUB.png"
                       alt="SAE Club"
@@ -218,31 +225,38 @@ export default function Home() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-navy group-hover:text-blue-primary transition-colors duration-300">
+                  <h3 className="text-lg sm:text-xl font-bold text-[#004D83] group-hover:text-[#0066A1] transition-colors duration-300">
                     SAE Student Chapter
                   </h3>
 
                   {/* Stats */}
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-blue-primary">42</div>
-                      <p className="text-gray-dark text-sm mt-1">Members</p>
+                      <div className="text-xl sm:text-2xl font-bold text-[#004D83]">
+                        42
+                      </div>
+                      <p className="text-gray-600 text-xs sm:text-sm mt-1">
+                        Members
+                      </p>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-orange">22</div>
-                      <p className="text-gray-dark text-sm mt-1">Events</p>
+                      <div className="text-xl sm:text-2xl font-bold text-orange-500">
+                        22
+                      </div>
+                      <p className="text-gray-600 text-xs sm:text-sm mt-1">
+                        Events
+                      </p>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-dark text-sm leading-relaxed">
-                    Society of Automotive Engineers student chapter promoting automotive engineering excellence and innovation.
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Society of Automotive Engineers student chapter promoting
+                    automotive engineering excellence and innovation.
                   </p>
 
                   {/* Action Button */}
-                  <button className="w-full btn-secondary">
-                    Learn More
-                  </button>
+                  <button className="w-full btn-secondary">Learn More</button>
                 </div>
               </ProfessionalCard>
             </div>
@@ -250,48 +264,29 @@ export default function Home() {
         </div>
 
         {/* Statistics Section */}
-        <div className="py-16 md:py-20 bg-light-gray">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+        <div className="py-12 sm:py-16 md:py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#004D83] mb-4">
                 Department Statistics
               </h2>
-              <p className="text-gray-dark text-lg max-w-2xl mx-auto">
-                Numbers that reflect our commitment to excellence in education and research
+              <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
+                Numbers that reflect our commitment to excellence in education
+                and research
               </p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-              <StatCard 
-                value="466" 
-                label="Publications"
-                icon={FileText}
-              />
-              <StatCard 
-                value="14:1" 
+              <StatCard value="466" label="Publications" icon={FileText} />
+              <StatCard
+                value="14:1"
                 label="Student-Teacher Ratio"
                 icon={Users}
               />
-              <StatCard 
-                value="172" 
-                label="Students"
-                icon={UserCheck}
-              />
-              <StatCard 
-                value="115" 
-                label="Workshops"
-                icon={BarChart}
-              />
-              <StatCard 
-                value="31" 
-                label="Funded Projects"
-                icon={Award}
-              />
-              <StatCard 
-                value="95%" 
-                label="Placement Rate"
-                icon={Target}
-              />
+              <StatCard value="172" label="Students" icon={UserCheck} />
+              <StatCard value="115" label="Workshops" icon={BarChart} />
+              <StatCard value="31" label="Funded Projects" icon={Award} />
+              <StatCard value="95%" label="Placement Rate" icon={Target} />
             </div>
           </div>
         </div>
