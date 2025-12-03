@@ -11,7 +11,7 @@ export default function FestoPage() {
         <div className="bg-[#004D83] text-white py-16">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <h1 className="text-3xl md:text-4xl font-bold mb-2">
-              FESTO Centre of Excellence
+              FESTO-EXPERIENCE Centre
             </h1>
             <p className="text-lg md:text-xl text-gray-200">
               (Pneumatics, Hydraulics & Factory Automation)

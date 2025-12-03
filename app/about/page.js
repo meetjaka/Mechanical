@@ -2,12 +2,12 @@ import DepartmentNavbar from "@/components/DepartmentNavbar";
 
 export default function AboutPage() {
   const stats = [
-    { value: "466", label: "Publications" },
-    { value: "14:1", label: "Student Teacher Ratio" },
-    { value: "172", label: "Number of Students" },
-    { value: "115", label: "Workshop Organized" },
+    { value: "535+", label: "Publications" },
+    { value: "16:1", label: "Student Teacher Ratio" },
+    { value: "200+", label: "Number of Students" },
+    { value: "144", label: "Workshop Organized" },
     { value: "31", label: "Projects & Grant Received" },
-    { value: "95%", label: "Placement - 2024" },
+    { value: "93%", label: "Placement: 2024-25" },
   ];
 
   const btechMinors = [
@@ -64,13 +64,13 @@ export default function AboutPage() {
               <div className="flex items-center gap-8">
                 <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6 min-w-[120px]">
                   <div className="text-3xl md:text-4xl font-bold text-[#F5A623]">
-                    466
+                    535+
                   </div>
                   <div className="text-sm text-blue-100 mt-1">Publications</div>
                 </div>
                 <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6 min-w-[120px]">
                   <div className="text-3xl md:text-4xl font-bold text-[#F5A623]">
-                    172
+                    200+
                   </div>
                   <div className="text-sm text-blue-100 mt-1">Students</div>
                 </div>
@@ -154,6 +154,33 @@ export default function AboutPage() {
                   </span>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* YouTube Video Section */}
+        <div className="py-16 md:py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#004D83] mb-3">
+                Ph.D.: Mechanical Engineering
+              </h2>
+              <div className="w-20 h-1 bg-[#F5A623] mx-auto"></div>
+            </div>
+            <div className="max-w-5xl mx-auto">
+              <div
+                className="relative w-full"
+                style={{ paddingBottom: "56.25%" }}
+              >
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+                  src="https://www.youtube.com/embed/skXI5gOeiM4?si=fDHjexY-mxn48zWT"
+                  title="CHAMOS Matrusanstha Department of Mechanical Engineering"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
