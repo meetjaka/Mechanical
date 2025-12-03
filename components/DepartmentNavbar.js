@@ -103,22 +103,32 @@ export default function DepartmentNavbar() {
           <div className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => (
               <div key={item.name} className="relative group">
-                <Link
-                  href={item.href}
-                  className={`relative px-4 py-3 text-sm font-semibold transition-all duration-200 inline-flex items-center gap-2 rounded-lg ${
-                    item.active
-                      ? "text-[#004D83] bg-blue-50"
-                      : "text-gray-700 hover:text-[#004D83] hover:bg-gray-50"
-                  }`}
-                >
-                  <span className="font-semibold">{item.name}</span>
-                  {item.hasDropdown && (
+                {item.hasDropdown ? (
+                  <button
+                    className={`relative px-4 py-3 text-sm font-semibold transition-all duration-200 inline-flex items-center gap-2 rounded-lg ${
+                      item.active
+                        ? "text-[#004D83] bg-blue-50"
+                        : "text-gray-700 hover:text-[#004D83] hover:bg-gray-50"
+                    }`}
+                  >
+                    <span className="font-semibold">{item.name}</span>
                     <ChevronDown
                       size={16}
                       className="transition-transform duration-200 group-hover:rotate-180"
                     />
-                  )}
-                </Link>
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={`relative px-4 py-3 text-sm font-semibold transition-all duration-200 inline-flex items-center gap-2 rounded-lg ${
+                      item.active
+                        ? "text-[#004D83] bg-blue-50"
+                        : "text-gray-700 hover:text-[#004D83] hover:bg-gray-50"
+                    }`}
+                  >
+                    <span className="font-semibold">{item.name}</span>
+                  </Link>
+                )}
 
                 {/* Professional Dropdown Menu */}
                 {item.hasDropdown && (
