@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useRef, useEffect } from "react";
 import dynamic from "next/dynamic";
 import DepartmentNavbar from "@/components/DepartmentNavbar";
 import HeroCarousel from "@/components/HeroCarousel";
@@ -34,9 +35,82 @@ import {
   Download,
   ExternalLink,
   Zap,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 export default function Home() {
+  const scrollContainerRef = useRef(null);
+  const softwareScrollRef = useRef(null);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
+  const [isSoftwareAutoScrolling, setIsSoftwareAutoScrolling] = useState(true);
+
+  // Auto-scroll functionality for recruiters
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current;
+    if (!scrollContainer || !isAutoScrolling) return;
+
+    const scroll = () => {
+      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+        scrollContainer.scrollLeft = 0;
+      } else {
+        scrollContainer.scrollLeft += 1;
+      }
+    };
+
+    const interval = setInterval(scroll, 30);
+    return () => clearInterval(interval);
+  }, [isAutoScrolling]);
+
+  // Auto-scroll functionality for software
+  useEffect(() => {
+    const scrollContainer = softwareScrollRef.current;
+    if (!scrollContainer || !isSoftwareAutoScrolling) return;
+
+    const scroll = () => {
+      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+        scrollContainer.scrollLeft = 0;
+      } else {
+        scrollContainer.scrollLeft += 1;
+      }
+    };
+
+    const interval = setInterval(scroll, 30);
+    return () => clearInterval(interval);
+  }, [isSoftwareAutoScrolling]);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+      setIsAutoScrolling(false);
+      setTimeout(() => setIsAutoScrolling(true), 3000);
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+      setIsAutoScrolling(false);
+      setTimeout(() => setIsAutoScrolling(true), 3000);
+    }
+  };
+
+  const scrollSoftwareLeft = () => {
+    if (softwareScrollRef.current) {
+      softwareScrollRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+      setIsSoftwareAutoScrolling(false);
+      setTimeout(() => setIsSoftwareAutoScrolling(true), 3000);
+    }
+  };
+
+  const scrollSoftwareRight = () => {
+    if (softwareScrollRef.current) {
+      softwareScrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+      setIsSoftwareAutoScrolling(false);
+      setTimeout(() => setIsSoftwareAutoScrolling(true), 3000);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white relative">
       <DepartmentNavbar />
@@ -351,11 +425,14 @@ export default function Home() {
         </div>
 
         {/* Major Recruiters Section */}
-        <div className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 to-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12">
+              <div className="inline-block px-4 py-2 bg-[#0066A1]/10 text-[#0066A1] rounded-md text-sm font-semibold tracking-wide mb-3">
+                Industry Partners
+              </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#004D83] mb-4">
-                Major Recruiters
+                Major <span className="text-[#0066A1]">Recruiters</span>
               </h2>
               <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
                 Our students are placed in leading companies across various
@@ -364,212 +441,315 @@ export default function Home() {
             </div>
 
             {/* Auto-rotating Logo Carousel */}
-            <div className="relative overflow-hidden">
-              <div className="flex animate-scroll">
-                <div className="flex gap-8 sm:gap-12 md:gap-16 items-center justify-center min-w-max px-4">
-                  <img
-                    src="/Industries logo/Asahi india.png"
-                    alt="Asahi India"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/TCS.png"
-                    alt="TCS"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/L&T.png"
-                    alt="L&T"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Reliance Industries.png"
-                    alt="Reliance Industries"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Tech mahindra.jpg"
-                    alt="Tech Mahindra"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Polycab.png"
-                    alt="Polycab"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Thermax.png"
-                    alt="Thermax"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/torrent power.png"
-                    alt="Torrent Power"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Elecon.png"
-                    alt="Elecon"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/GSFC.jpg"
-                    alt="GSFC"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Meditab.png"
-                    alt="Meditab"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/emipro.png"
-                    alt="Emipro"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Dosepacker.jpg"
-                    alt="Dosepacker"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Sanmar.jpg"
-                    alt="Sanmar"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Omega.png"
-                    alt="Omega"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/MG.png"
-                    alt="MG"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/SMS.png"
-                    alt="SMS"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/TEV.png"
-                    alt="TEV"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Mahrashi.png"
-                    alt="Mahrashi"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Par heat techno.png"
-                    alt="Par Heat Techno"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                </div>
-                {/* Duplicate for seamless loop */}
-                <div className="flex gap-8 sm:gap-12 md:gap-16 items-center justify-center min-w-max px-4">
-                  <img
-                    src="/Industries logo/Asahi india.png"
-                    alt="Asahi India"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/TCS.png"
-                    alt="TCS"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/L&T.png"
-                    alt="L&T"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Reliance Industries.png"
-                    alt="Reliance Industries"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Tech mahindra.jpg"
-                    alt="Tech Mahindra"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Polycab.png"
-                    alt="Polycab"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Thermax.png"
-                    alt="Thermax"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/torrent power.png"
-                    alt="Torrent Power"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Elecon.png"
-                    alt="Elecon"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/GSFC.jpg"
-                    alt="GSFC"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Meditab.png"
-                    alt="Meditab"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/emipro.png"
-                    alt="Emipro"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Dosepacker.jpg"
-                    alt="Dosepacker"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Sanmar.jpg"
-                    alt="Sanmar"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Omega.png"
-                    alt="Omega"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/MG.png"
-                    alt="MG"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/SMS.png"
-                    alt="SMS"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/TEV.png"
-                    alt="TEV"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Mahrashi.png"
-                    alt="Mahrashi"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/Industries logo/Par heat techno.png"
-                    alt="Par Heat Techno"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
+            <div className="relative">
+              {/* Navigation Buttons */}
+              <button
+                onClick={scrollLeft}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-[#0066A1] text-[#0066A1] hover:text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                aria-label="Previous companies"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button
+                onClick={scrollRight}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-[#0066A1] text-[#0066A1] hover:text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                aria-label="Next companies"
+              >
+                <ChevronRight size={24} />
+              </button>
+
+              <div 
+                ref={scrollContainerRef}
+                className="relative overflow-x-auto scrollbar-hide py-8 px-12"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {/* Gradient Overlays */}
+                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-100 to-transparent z-10 pointer-events-none"></div>
+                
+                <div className="flex gap-12 sm:gap-16 md:gap-20 items-center min-w-max px-4">
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Asahi india.png"
+                      alt="Asahi India"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/TCS.png"
+                      alt="TCS"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/L&T.png"
+                      alt="L&T"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Reliance Industries.png"
+                      alt="Reliance Industries"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Tech mahindra.jpg"
+                      alt="Tech Mahindra"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Polycab.png"
+                      alt="Polycab"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Thermax.png"
+                      alt="Thermax"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/torrent power.png"
+                      alt="Torrent Power"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Elecon.png"
+                      alt="Elecon"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/GSFC.jpg"
+                      alt="GSFC"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Meditab.png"
+                      alt="Meditab"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/emipro.png"
+                      alt="Emipro"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Dosepacker.jpg"
+                      alt="Dosepacker"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Sanmar.jpg"
+                      alt="Sanmar"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Omega.png"
+                      alt="Omega"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/MG.png"
+                      alt="MG"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/SMS.png"
+                      alt="SMS"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/TEV.png"
+                      alt="TEV"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Mahrashi.png"
+                      alt="Mahrashi"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Par heat techno.png"
+                      alt="Par Heat Techno"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+
+                  {/* Duplicate set for seamless infinite scroll */}
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Asahi india.png"
+                      alt="Asahi India"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/TCS.png"
+                      alt="TCS"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/L&T.png"
+                      alt="L&T"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Reliance Industries.png"
+                      alt="Reliance Industries"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Tech mahindra.jpg"
+                      alt="Tech Mahindra"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Polycab.png"
+                      alt="Polycab"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Thermax.png"
+                      alt="Thermax"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/torrent power.png"
+                      alt="Torrent Power"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Elecon.png"
+                      alt="Elecon"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/GSFC.jpg"
+                      alt="GSFC"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Meditab.png"
+                      alt="Meditab"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/emipro.png"
+                      alt="Emipro"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Dosepacker.jpg"
+                      alt="Dosepacker"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Sanmar.jpg"
+                      alt="Sanmar"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Omega.png"
+                      alt="Omega"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/MG.png"
+                      alt="MG"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/SMS.png"
+                      alt="SMS"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/TEV.png"
+                      alt="TEV"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Mahrashi.png"
+                      alt="Mahrashi"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/Industries logo/Par heat techno.png"
+                      alt="Par Heat Techno"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -580,8 +760,11 @@ export default function Home() {
         <div className="py-12 sm:py-16 md:py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-12">
+              <div className="inline-block px-4 py-2 bg-[#0066A1]/10 text-[#0066A1] rounded-md text-sm font-semibold tracking-wide mb-3">
+                Technology Stack
+              </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#004D83] mb-4">
-                Major Softwares
+                Major <span className="text-[#0066A1]">Softwares</span>
               </h2>
               <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
                 Industry-standard tools and technologies used in our curriculum
@@ -589,112 +772,175 @@ export default function Home() {
             </div>
 
             {/* Auto-rotating Software Logo Carousel */}
-            <div className="relative overflow-hidden">
-              <div className="flex animate-scroll">
-                <div className="flex gap-8 sm:gap-12 md:gap-16 items-center justify-center min-w-max px-4">
-                  <img
-                    src="/software/s1.jpg"
-                    alt="Software 1"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/software/s2.jpg"
-                    alt="Software 2"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/software/s3.jpg"
-                    alt="Software 3"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/software/s4.jpg"
-                    alt="Software 4"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/software/s5.jpg"
-                    alt="Software 5"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/software/s6.jpg"
-                    alt="Software 6"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/software/s7.jpg"
-                    alt="Software 7"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/software/s8.jpg"
-                    alt="Software 8"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/software/s9.jpg"
-                    alt="Software 9"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/software/s10.jpg"
-                    alt="Software 10"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                </div>
-                {/* Duplicate for seamless loop */}
-                <div className="flex gap-8 sm:gap-12 md:gap-16 items-center justify-center min-w-max px-4">
-                  <img
-                    src="/software/s1.jpg"
-                    alt="Software 1"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/software/s2.jpg"
-                    alt="Software 2"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/software/s3.jpg"
-                    alt="Software 3"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/software/s4.jpg"
-                    alt="Software 4"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/software/s5.jpg"
-                    alt="Software 5"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/software/s6.jpg"
-                    alt="Software 6"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/software/s7.jpg"
-                    alt="Software 7"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/software/s8.jpg"
-                    alt="Software 8"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/software/s9.jpg"
-                    alt="Software 9"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
-                  <img
-                    src="/software/s10.jpg"
-                    alt="Software 10"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300"
-                  />
+            <div className="relative">
+              {/* Navigation Buttons */}
+              <button
+                onClick={scrollSoftwareLeft}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-[#0066A1] text-[#0066A1] hover:text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                aria-label="Previous software"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button
+                onClick={scrollSoftwareRight}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-[#0066A1] text-[#0066A1] hover:text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                aria-label="Next software"
+              >
+                <ChevronRight size={24} />
+              </button>
+
+              <div 
+                ref={softwareScrollRef}
+                className="relative overflow-x-auto scrollbar-hide py-8 px-12"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {/* Gradient Overlays */}
+                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
+                
+                <div className="flex gap-8 sm:gap-12 md:gap-16 items-center min-w-max px-4">
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s1.jpg"
+                      alt="Software 1"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s2.jpg"
+                      alt="Software 2"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s3.jpg"
+                      alt="Software 3"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s4.jpg"
+                      alt="Software 4"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s5.jpg"
+                      alt="Software 5"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s6.jpg"
+                      alt="Software 6"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s7.jpg"
+                      alt="Software 7"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s8.jpg"
+                      alt="Software 8"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s9.jpg"
+                      alt="Software 9"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s10.jpg"
+                      alt="Software 10"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+
+                  {/* Duplicate set for seamless infinite scroll */}
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s1.jpg"
+                      alt="Software 1"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s2.jpg"
+                      alt="Software 2"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s3.jpg"
+                      alt="Software 3"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s4.jpg"
+                      alt="Software 4"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s5.jpg"
+                      alt="Software 5"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s6.jpg"
+                      alt="Software 6"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s7.jpg"
+                      alt="Software 7"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s8.jpg"
+                      alt="Software 8"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s9.jpg"
+                      alt="Software 9"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <img
+                      src="/software/s10.jpg"
+                      alt="Software 10"
+                      className="h-16 sm:h-20 md:h-24 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
