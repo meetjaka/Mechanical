@@ -43,7 +43,7 @@ export default function Home() {
       <HeroCarousel />
 
       {/* Download Brochure Section */}
-      <div className="bg-gray-50 border-b border-gray-200">
+      <div className="bg-gradient-to-br from-gray-50 to-gray-100 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           <ProfessionalCard className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 group">
             <div className="flex items-center gap-3 sm:gap-4">
@@ -51,7 +51,7 @@ export default function Home() {
                 <Download size={24} />
               </div>
               <div>
-                <h3 className="text-base sm:text-lg font-bold text-[#004D83] group-hover:text-[#0066A1] transition-colors duration-300">
+                <h3 className="text-base sm:text-lg font-bold text-[#004D83] group-hover:text-orange-500 transition-colors duration-300">
                   Department Brochure
                 </h3>
                 <p className="text-gray-600 text-xs sm:text-sm">
@@ -61,10 +61,10 @@ export default function Home() {
             </div>
 
             <a
-              href="https://drive.google.com/file/d/your-brochure-file-id/view"
+              href="https://drive.google.com/file/d/1PQk4W6fplXv3uHDxsNMyET4rf1-IF3l6/view"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-accent flex items-center gap-2 group-hover:shadow-lifted"
+              className="bg-[#0066A1] hover:bg-[#004D83] text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300 shadow-md hover:shadow-lg"
             >
               Download Now
               <ExternalLink size={18} />
