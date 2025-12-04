@@ -86,30 +86,52 @@ export default function Gallery() {
     <div className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#004D83] mb-4">
-            Gallery
+          <div className="inline-block px-4 py-2 bg-blue-50 text-[#0066A1] rounded-lg text-sm font-semibold mb-4">
+            Campus Life
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#0066A1] mb-4">
+            GALLERY
           </h2>
+          <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-4">
+            Explore our vibrant campus life, state-of-the-art facilities, and student activities
+          </p>
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {galleryImages.map((image, index) => (
             <div
               key={image.id}
-              className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer group aspect-[4/3]"
+              className="group relative overflow-hidden rounded-2xl cursor-pointer aspect-square shadow-md hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-[#0066A1]"
               onClick={() => openLightbox(index)}
             >
               <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-75"
+                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-125 group-hover:rotate-2"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-white font-semibold text-sm sm:text-base">
-                    Click to view
-                  </p>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0066A1]/90 via-[#0066A1]/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                <div className="absolute inset-0 flex flex-col items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                      />
+                    </svg>
+                  </div>
+                  <p className="text-white font-semibold text-sm">View Image</p>
                 </div>
+              </div>
+              <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-[#0066A1] px-3 py-1 rounded-full text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {index + 1}
               </div>
             </div>
           ))}
@@ -118,7 +140,7 @@ export default function Gallery() {
         {/* Lightbox Modal */}
         {selectedImage && (
           <div
-            className={`fixed inset-0 z-[9999] flex items-center justify-center bg-black p-4 transition-opacity duration-300 ${
+            className={`fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 backdrop-blur-sm p-4 transition-opacity duration-300 ${
               isAnimating ? "opacity-0" : "opacity-100"
             }`}
             onClick={closeLightbox}
@@ -129,10 +151,10 @@ export default function Gallery() {
             {/* Close Button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 z-[10000] text-white hover:text-gray-300 transition-all duration-300 p-2 hover:bg-white/20 rounded-full hover:rotate-90"
+              className="absolute top-4 right-4 z-[10000] text-white hover:text-[#0066A1] transition-all duration-300 p-3 bg-white/10 hover:bg-white/20 rounded-full hover:rotate-90 backdrop-blur-sm"
               aria-label="Close"
             >
-              <X className="w-8 h-8 sm:w-10 sm:h-10" />
+              <X className="w-6 h-6 sm:w-8 sm:h-8" />
             </button>
 
             {/* Previous Button */}
@@ -141,10 +163,10 @@ export default function Gallery() {
                 e.stopPropagation();
                 goToPrevious();
               }}
-              className="absolute left-4 z-[10000] text-white hover:text-gray-300 transition-all duration-300 p-2 sm:p-3 hover:bg-white/20 rounded-full hover:scale-110 hover:-translate-x-1"
+              className="absolute left-4 z-[10000] text-white hover:text-[#0066A1] transition-all duration-300 p-3 bg-white/10 hover:bg-white/20 rounded-full hover:scale-110 hover:-translate-x-1 backdrop-blur-sm"
               aria-label="Previous image"
             >
-              <ChevronLeft className="w-8 h-8 sm:w-10 sm:h-10" />
+              <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
             </button>
 
             {/* Next Button */}
@@ -153,10 +175,10 @@ export default function Gallery() {
                 e.stopPropagation();
                 goToNext();
               }}
-              className="absolute right-4 z-[10000] text-white hover:text-gray-300 transition-all duration-300 p-2 sm:p-3 hover:bg-white/20 rounded-full hover:scale-110 hover:translate-x-1"
+              className="absolute right-4 z-[10000] text-white hover:text-[#0066A1] transition-all duration-300 p-3 bg-white/10 hover:bg-white/20 rounded-full hover:scale-110 hover:translate-x-1 backdrop-blur-sm"
               aria-label="Next image"
             >
-              <ChevronRight className="w-8 h-8 sm:w-10 sm:h-10" />
+              <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
             </button>
 
             {/* Image */}
@@ -166,16 +188,19 @@ export default function Gallery() {
               }`}
               onClick={(e) => e.stopPropagation()}
             >
-              <img
-                src={selectedImage.src}
-                alt={selectedImage.alt}
-                className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl transform transition-transform duration-500"
-              />
+              <div className="relative">
+                <img
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  className="max-w-full max-h-[90vh] object-contain rounded-2xl shadow-2xl transform transition-transform duration-500 border-4 border-white/10"
+                />
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#0066A1] to-orange-500 rounded-2xl opacity-20 blur-xl -z-10"></div>
+              </div>
             </div>
 
             {/* Image Counter */}
             <div
-              className={`absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm sm:text-base bg-black/70 px-4 py-2 rounded-full backdrop-blur-sm transition-all duration-300 ${
+              className={`absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-sm sm:text-base bg-[#0066A1]/80 px-6 py-3 rounded-full backdrop-blur-md transition-all duration-300 font-semibold shadow-lg ${
                 isAnimating
                   ? "opacity-0 translate-y-4"
                   : "opacity-100 translate-y-0"

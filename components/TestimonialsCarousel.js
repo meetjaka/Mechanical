@@ -114,36 +114,42 @@ export default function TestimonialsCarousel() {
   };
 
   return (
-    <div className="py-12 sm:py-16 md:py-20 bg-gray-50">
+    <div className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-blue-50 via-white to-orange-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#004D83] mb-4">
-            Testimonials
+        <div className="text-center mb-10 sm:mb-14">
+          <div className="inline-block px-4 py-2 bg-[#0066A1]/10 text-[#0066A1] rounded-md text-sm font-semibold tracking-wide mb-3">
+            Success Stories
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#004D83] mb-4">
+            What Our <span className="text-[#0066A1]">Community</span> Says
           </h2>
+          <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
+            Hear from our students, alumni, and parents about their experiences and achievements
+          </p>
         </div>
 
-        <div className="relative">
+        <div className="relative max-w-5xl mx-auto">
           {/* Navigation Buttons */}
           <button
             onClick={handlePrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-100 text-[#004D83] p-2 sm:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 -ml-4 sm:-ml-6"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-[#0066A1] text-[#0066A1] hover:text-white p-3 rounded-full shadow-xl transition-all duration-300 hover:scale-110 -ml-4 sm:-ml-6"
             aria-label="Previous testimonial"
           >
-            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+            <ChevronLeft className="w-6 h-6" />
           </button>
 
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-100 text-[#004D83] p-2 sm:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 -mr-4 sm:-mr-6"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-[#0066A1] text-[#0066A1] hover:text-white p-3 rounded-full shadow-xl transition-all duration-300 hover:scale-110 -mr-4 sm:-mr-6"
             aria-label="Next testimonial"
           >
-            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+            <ChevronRight className="w-6 h-6" />
           </button>
 
           {/* Testimonials Container */}
           <div
             ref={scrollContainerRef}
-            className="overflow-hidden cursor-grab active:cursor-grabbing"
+            className="overflow-hidden"
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
@@ -153,44 +159,59 @@ export default function TestimonialsCarousel() {
             onTouchMove={handleTouchMove}
           >
             <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{
-                transform: `translateX(-${currentIndex * 100}%)`,
-              }}
+              className="flex transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {testimonials.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className="w-full flex-shrink-0 px-4 sm:px-8 md:px-12"
+                  className="w-full flex-shrink-0 px-4 sm:px-8"
                 >
-                  <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 md:p-10 max-w-4xl mx-auto">
-                    <div className="relative mb-6 sm:mb-8">
-                      <img
-                        src="/quote-sign-left.png"
-                        alt="Quote"
-                        className="absolute -top-2 -left-2 w-6 h-6 sm:w-8 sm:h-8 opacity-20"
-                      />
-                      <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed px-6 sm:px-8 text-center italic">
-                        {testimonial.quote}
-                      </p>
-                      <img
-                        src="/quote-sign-right.png"
-                        alt="Quote"
-                        className="absolute -bottom-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 opacity-20"
-                      />
-                    </div>
-                    <div className="flex flex-col items-center text-center mt-6">
-                      <img
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full mb-4 object-cover border-4 border-gray-200"
-                      />
-                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">
-                        {testimonial.name}
-                      </h3>
-                      <h4 className="text-xs sm:text-sm text-gray-600">
-                        {testimonial.role}
-                      </h4>
+                  <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
+                    <div className="p-6 sm:p-8 md:p-10">
+                      {/* Quote Icon */}
+                      <div className="mb-6">
+                        <svg
+                          className="w-12 h-12 text-[#0066A1] opacity-30"
+                          fill="currentColor"
+                          viewBox="0 0 32 32"
+                        >
+                          <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H8c0-1.1.9-2 2-2V8zm12 0c-3.3 0-6 2.7-6 6v10h10V14h-6c0-1.1.9-2 2-2V8z" />
+                        </svg>
+                      </div>
+
+                      {/* Content Layout */}
+                      <div className="flex flex-col md:flex-row gap-6 items-start">
+                        {/* Image Section */}
+                        <div className="flex-shrink-0 mx-auto md:mx-0">
+                          <div className="relative">
+                            <div className="absolute -inset-2 bg-gradient-to-r from-[#0066A1] to-orange-500 rounded-full opacity-20 blur-lg"></div>
+                            <img
+                              src={testimonial.image}
+                              alt={testimonial.name}
+                              className="relative w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-white shadow-lg"
+                            />
+                          </div>
+                        </div>
+
+                        {/* Text Content */}
+                        <div className="flex-1 text-center md:text-left">
+                          {/* Quote */}
+                          <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-6 italic">
+                            "{testimonial.quote}"
+                          </p>
+
+                          {/* Author Info */}
+                          <div>
+                            <h4 className="text-lg sm:text-xl font-bold text-[#004D83] mb-1">
+                              {testimonial.name}
+                            </h4>
+                            <p className="text-sm text-[#0066A1] font-medium">
+                              {testimonial.role}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -199,15 +220,15 @@ export default function TestimonialsCarousel() {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-6 sm:mt-8">
+          <div className="flex justify-center gap-2 mt-8">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                className={`transition-all duration-300 rounded-full ${
                   index === currentIndex
-                    ? "bg-[#004D83] w-6 sm:w-8"
-                    : "bg-gray-300 hover:bg-gray-400"
+                    ? "w-8 h-3 bg-[#0066A1]"
+                    : "w-3 h-3 bg-gray-300 hover:bg-gray-400"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
