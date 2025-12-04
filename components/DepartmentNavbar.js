@@ -2,12 +2,26 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X, ExternalLink } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { 
+  ChevronDown, 
+  Menu, 
+  X, 
+  ExternalLink,
+  GraduationCap,
+  Settings,
+  Microscope,
+  FlaskConical,
+  BookOpen,
+  Download,
+  TestTube
+} from "lucide-react";
 
 export default function DepartmentNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   // Handle scroll effect
   useEffect(() => {
@@ -19,30 +33,47 @@ export default function DepartmentNavbar() {
   }, []);
 
   const researchLabsDropdown = [
-    { name: "Grants & Consultancy", href: "/research-labs/grants-consultancy" },
+    { 
+      name: "Grants & Consultancy", 
+      href: "/research-labs/grants-consultancy",
+      icon: BookOpen,
+      description: "Funding opportunities and industry partnerships"
+    },
     {
       name: "Materials Processing Lab",
       href: "/research-labs/materials-processing",
+      icon: Settings,
+      description: "Advanced material processing techniques"
     },
     {
       name: "Surface Engineering Lab",
       href: "/research-labs/surface-engineering",
+      icon: Microscope,
+      description: "Surface modification and characterization"
     },
     {
       name: "Casting Simulation & E-Foundry Cell",
       href: "/research-labs/casting-simulation",
+      icon: FlaskConical,
+      description: "Digital casting simulation and prototyping"
     },
     {
       name: "Manufacturing Technology Lab",
       href: "/research-labs/manufacturing-technology",
+      icon: Settings,
+      description: "Next-generation manufacturing processes"
     },
     {
       name: "Material Testing & Characterisation Lab",
       href: "/research-labs/material-testing",
+      icon: TestTube,
+      description: "Comprehensive material analysis and testing"
     },
     {
       name: "Fluid Mechanics and Heat Transfer Lab",
       href: "/research-labs/fluid-mechanics",
+      icon: FlaskConical,
+      description: "Thermal and fluid dynamics research"
     },
   ];
 
@@ -51,29 +82,53 @@ export default function DepartmentNavbar() {
       name: "Download Forms",
       href: "https://drive.google.com/drive/folders/10-XqFw6ISXnDeyajK8oB3YIIj6NfrIyO",
       isExternal: true,
+      icon: Download,
+      description: "Access important academic forms"
     },
   ];
 
   const navItems = [
-    { name: "About", href: "/about", active: false },
+    { 
+      name: "About", 
+      href: "/about", 
+      icon: GraduationCap 
+    },
     {
       name: "Research Labs",
       href: "/research-labs",
-      active: false,
       hasDropdown: true,
       dropdownItems: researchLabsDropdown,
+      icon: Microscope
     },
-    { name: "FESTO", href: "/festo", active: false },
-    { name: "Testing Facilities", href: "/testing-facilities", active: false },
-    { name: "Events", href: "/events", active: false },
+    { 
+      name: "FESTO", 
+      href: "/festo", 
+      icon: Settings 
+    },
+    { 
+      name: "Testing Facilities", 
+      href: "/testing-facilities", 
+      icon: FlaskConical 
+    },
+    { 
+      name: "Events", 
+      href: "/events", 
+      icon: BookOpen 
+    },
     {
       name: "Student Corner",
       href: "/student-corner",
-      active: false,
       hasDropdown: true,
       dropdownItems: studentCornerDropdown,
+      icon: GraduationCap
     },
   ];
+
+  // Helper function to check if current route is active
+  const isActive = (href) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
 
   return (
     <nav
@@ -106,11 +161,12 @@ export default function DepartmentNavbar() {
                 {item.hasDropdown ? (
                   <button
                     className={`relative px-4 py-3 text-sm font-semibold transition-all duration-200 inline-flex items-center gap-2 rounded-lg ${
-                      item.active
-                        ? "text-[#004D83] bg-blue-50"
-                        : "text-gray-700 hover:text-[#004D83] hover:bg-gray-50"
+                      isActive(item.href)
+                        ? "text-[#0066A1] bg-blue-50"
+                        : "text-gray-700 hover:text-[#0066A1] hover:bg-gray-50"
                     }`}
                   >
+                    {item.icon && <item.icon className="w-4 h-4" />}
                     <span className="font-semibold">{item.name}</span>
                     <ChevronDown
                       size={16}
@@ -121,19 +177,20 @@ export default function DepartmentNavbar() {
                   <Link
                     href={item.href}
                     className={`relative px-4 py-3 text-sm font-semibold transition-all duration-200 inline-flex items-center gap-2 rounded-lg ${
-                      item.active
-                        ? "text-[#004D83] bg-blue-50"
-                        : "text-gray-700 hover:text-[#004D83] hover:bg-gray-50"
+                      isActive(item.href)
+                        ? "text-[#0066A1] bg-blue-50"
+                        : "text-gray-700 hover:text-[#0066A1] hover:bg-gray-50"
                     }`}
                   >
+                    {item.icon && <item.icon className="w-4 h-4" />}
                     <span className="font-semibold">{item.name}</span>
                   </Link>
                 )}
 
-                {/* Professional Dropdown Menu */}
+                {/* Modern Dropdown Menu with Icons and Descriptions */}
                 {item.hasDropdown && (
-                  <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                    <div className="p-2">
+                  <div className="absolute top-full left-0 mt-2 w-96 bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+                    <div className="p-4">
                       {item.dropdownItems.map((dropdownItem) => (
                         <div key={dropdownItem.name}>
                           {dropdownItem.isExternal ? (
@@ -141,22 +198,57 @@ export default function DepartmentNavbar() {
                               href={dropdownItem.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center px-4 py-3 text-sm text-gray-700 hover:text-[#004D83] hover:bg-gray-50 transition-all duration-200 rounded-md group/item"
+                              className="group/item flex items-start gap-3 px-4 py-3 text-sm hover:bg-blue-50 transition-all duration-200 rounded-xl"
                             >
-                              <span className="flex-1 font-medium">
-                                {dropdownItem.name}
-                              </span>
+                              <div className="p-2 rounded-lg bg-blue-50 group-hover/item:bg-blue-100 transition-colors">
+                                <dropdownItem.icon className="w-5 h-5 text-[#0066A1]" />
+                              </div>
+                              <div className="flex-1">
+                                <h3 className="font-semibold text-gray-900 group-hover/item:text-[#0066A1] transition-colors">
+                                  {dropdownItem.name}
+                                </h3>
+                                <p className="text-xs text-gray-600 mt-1">
+                                  {dropdownItem.description}
+                                </p>
+                              </div>
                               <ExternalLink
                                 size={16}
-                                className="opacity-60 group-hover/item:opacity-100 transition-opacity"
+                                className="text-gray-400 group-hover/item:text-[#0066A1] transition-colors mt-1"
                               />
                             </a>
                           ) : (
                             <Link
                               href={dropdownItem.href}
-                              className="flex items-center px-4 py-3 text-sm text-gray-700 hover:text-[#004D83] hover:bg-gray-50 transition-all duration-200 rounded-md font-medium"
+                              className={`group/item flex items-start gap-3 px-4 py-3 text-sm transition-all duration-200 rounded-xl ${
+                                isActive(dropdownItem.href)
+                                  ? "bg-blue-100 border border-blue-200"
+                                  : "hover:bg-blue-50"
+                              }`}
                             >
-                              {dropdownItem.name}
+                              <div className={`p-2 rounded-lg transition-colors ${
+                                isActive(dropdownItem.href)
+                                  ? "bg-blue-200"
+                                  : "bg-blue-50 group-hover/item:bg-blue-100"
+                              }`}>
+                                <dropdownItem.icon className="w-5 h-5 text-[#0066A1]" />
+                              </div>
+                              <div className="flex-1">
+                                <h3 className={`font-semibold transition-colors ${
+                                  isActive(dropdownItem.href)
+                                    ? "text-[#0066A1]"
+                                    : "text-gray-900 group-hover/item:text-[#0066A1]"
+                                }`}>
+                                  {dropdownItem.name}
+                                </h3>
+                                <p className="text-xs text-gray-600 mt-1">
+                                  {dropdownItem.description}
+                                </p>
+                              </div>
+                              <ChevronDown className={`w-4 h-4 transition-colors rotate-[-90deg] mt-1 ${
+                                isActive(dropdownItem.href)
+                                  ? "text-[#0066A1]"
+                                  : "text-gray-400 group-hover/item:text-[#0066A1]"
+                              }`} />
                             </Link>
                           )}
                         </div>
@@ -190,13 +282,16 @@ export default function DepartmentNavbar() {
                 <Link
                   href={item.href}
                   className={`flex items-center justify-between px-4 py-4 text-base font-semibold rounded-lg transition-all duration-200 ${
-                    item.active
-                      ? "text-[#004D83] bg-blue-50"
-                      : "text-gray-700 hover:text-[#004D83] hover:bg-gray-50"
+                    isActive(item.href)
+                      ? "text-[#0066A1] bg-blue-50"
+                      : "text-gray-700 hover:text-[#0066A1] hover:bg-gray-50"
                   }`}
                   onClick={() => !item.hasDropdown && setMobileMenuOpen(false)}
                 >
-                  <span>{item.name}</span>
+                  <div className="flex items-center gap-2">
+                    {item.icon && <item.icon className="w-5 h-5" />}
+                    <span>{item.name}</span>
+                  </div>
                   {item.hasDropdown && <ChevronDown size={20} />}
                 </Link>
 
@@ -210,9 +305,10 @@ export default function DepartmentNavbar() {
                             href={dropdownItem.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center px-4 py-3 text-sm text-gray-700 hover:text-[#004D83] rounded-lg transition-colors group"
+                            className="flex items-center gap-2 px-4 py-3 text-sm text-gray-700 hover:text-[#0066A1] hover:bg-blue-50 rounded-lg transition-colors group"
                             onClick={() => setMobileMenuOpen(false)}
                           >
+                            {dropdownItem.icon && <dropdownItem.icon className="w-4 h-4" />}
                             <span className="flex-1 font-medium">
                               {dropdownItem.name}
                             </span>
@@ -224,9 +320,14 @@ export default function DepartmentNavbar() {
                         ) : (
                           <Link
                             href={dropdownItem.href}
-                            className="block px-4 py-3 text-sm text-gray-700 hover:text-[#004D83] rounded-lg transition-colors font-medium"
+                            className={`flex items-center gap-2 px-4 py-3 text-sm rounded-lg transition-colors font-medium ${
+                              isActive(dropdownItem.href)
+                                ? "text-[#0066A1] bg-blue-100 border border-blue-200"
+                                : "text-gray-700 hover:text-[#0066A1] hover:bg-blue-50"
+                            }`}
                             onClick={() => setMobileMenuOpen(false)}
                           >
+                            {dropdownItem.icon && <dropdownItem.icon className="w-4 h-4" />}
                             {dropdownItem.name}
                           </Link>
                         )}
