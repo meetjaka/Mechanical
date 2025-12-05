@@ -2,38 +2,45 @@ import DepartmentNavbar from "@/components/DepartmentNavbar";
 
 export default function GrantsConsultancy() {
   return (
-    <div>
+    <div className="bg-gray-50">
       <DepartmentNavbar />
 
-      <main className="bg-white pt-16">
-        {/* Page Header */}
-        <div className="bg-gradient-to-r from-[#004D83] to-[#0066A1] py-12">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-white">
-              Research Grants & Consultancy
+      <main className="pt-16">
+        {/* Header Section */}
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 border-b border-gray-200">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16">
+            <div className="inline-block px-4 py-2 bg-[#0066A1] text-white rounded-md text-sm font-semibold tracking-wide mb-4">
+              Research & Innovation
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#004D83] mb-4">
+              Research Grants &{" "}
+              <span className="text-[#0066A1]">Consultancy</span>
             </h1>
-            <p className="text-white/90 mt-2 text-lg">
-              Funded Research Projects and Consultancy Services
-            </p>
           </div>
         </div>
 
         {/* Research Grants Section */}
-        <div className="py-16 md:py-20 bg-gray-50">
+        <div className="py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="mb-12">
+            <div className="text-center mb-12">
+              <div className="inline-block px-4 py-2 bg-orange-500/10 text-orange-500 rounded-md text-sm font-semibold tracking-wide mb-3">
+                Funded Projects
+              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-[#004D83] mb-3">
-                RESEARCH GRANTS
+                Research <span className="text-[#0066A1]">Grants</span>
               </h2>
-              <div className="w-24 h-1 bg-[#004D83]"></div>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Comprehensive list of research grants secured from various
+                national and international funding agencies
+              </p>
             </div>
 
             {/* Table Container */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="bg-[#004D83] text-white">
+                    <tr className="bg-gradient-to-r from-[#004D83] to-[#0066A1] text-white">
                       <th className="px-4 py-4 text-left text-sm font-semibold border-r border-white/20">
                         Year
                       </th>
@@ -55,8 +62,8 @@ export default function GrantsConsultancy() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200">
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2020-2022
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -76,8 +83,8 @@ export default function GrantsConsultancy() {
                         composite material
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2020-2021
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -98,8 +105,8 @@ export default function GrantsConsultancy() {
                         elements
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2019-2021
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -119,8 +126,8 @@ export default function GrantsConsultancy() {
                         System with mounting attachment for Precision Farming
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2019-2022
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -140,8 +147,8 @@ export default function GrantsConsultancy() {
                         Reinforced Nylon 6 Composites for Rubbing Parts
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2019-2022
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -163,8 +170,8 @@ export default function GrantsConsultancy() {
                         Emulsified Bio-diesel blends
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2019-2022
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -185,8 +192,8 @@ export default function GrantsConsultancy() {
                         engine
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2019-2020
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -207,8 +214,8 @@ export default function GrantsConsultancy() {
                         composites using magneto rheological dampers
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2018-2020
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -228,8 +235,8 @@ export default function GrantsConsultancy() {
                         absorber/Isolator using magnetorheological Dampers
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2017-2019
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -250,8 +257,8 @@ export default function GrantsConsultancy() {
                         tokamak ADITYA
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2016-2020
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -272,8 +279,8 @@ export default function GrantsConsultancy() {
                         lakhs)
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2016-2018
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -293,8 +300,8 @@ export default function GrantsConsultancy() {
                         Conductivity Enhancement
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2015-2018
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -315,8 +322,8 @@ export default function GrantsConsultancy() {
                         Technologies in Indian Foundries
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2013
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -336,8 +343,8 @@ export default function GrantsConsultancy() {
                         thin films
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2012–2013
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -365,21 +372,28 @@ export default function GrantsConsultancy() {
         </div>
 
         {/* Laboratory Development Grants Section */}
-        <div className="py-16 md:py-20 bg-white">
+        <div className="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="mb-12">
+            <div className="text-center mb-12">
+              <div className="inline-block px-4 py-2 bg-[#0066A1]/10 text-[#0066A1] rounded-md text-sm font-semibold tracking-wide mb-3">
+                Infrastructure Development
+              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-[#004D83] mb-3">
-                LABORATORY DEVELOPMENT GRANTS
+                Laboratory{" "}
+                <span className="text-[#0066A1]">Development Grants</span>
               </h2>
-              <div className="w-24 h-1 bg-[#004D83]"></div>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Modernizing our laboratories with state-of-the-art equipment
+                through AICTE funding
+              </p>
             </div>
 
             {/* Table Container */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="bg-[#004D83] text-white">
+                    <tr className="bg-gradient-to-r from-[#004D83] to-[#0066A1] text-white">
                       <th className="px-4 py-4 text-left text-sm font-semibold border-r border-white/20">
                         Year
                       </th>
@@ -398,8 +412,8 @@ export default function GrantsConsultancy() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200">
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2012 – 13
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -415,8 +429,8 @@ export default function GrantsConsultancy() {
                         Surface Texture Measuring System
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2011 – 12
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -432,8 +446,8 @@ export default function GrantsConsultancy() {
                         Machine Vision Lab
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2010 – 11
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -449,8 +463,8 @@ export default function GrantsConsultancy() {
                         Production & Automation Lab
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2009 – 10
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -474,21 +488,27 @@ export default function GrantsConsultancy() {
         </div>
 
         {/* Consultancy Grant Section */}
-        <div className="py-16 md:py-20 bg-gray-50">
+        <div className="py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="mb-12">
+            <div className="text-center mb-12">
+              <div className="inline-block px-4 py-2 bg-orange-500/10 text-orange-500 rounded-md text-sm font-semibold tracking-wide mb-3">
+                Industry Partnership
+              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-[#004D83] mb-3">
-                CONSULTANCY GRANT
+                Consultancy <span className="text-[#0066A1]">Grant</span>
               </h2>
-              <div className="w-24 h-1 bg-[#004D83]"></div>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Collaborative projects with industry partners demonstrating our
+                practical expertise
+              </p>
             </div>
 
             {/* Table Container */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="bg-[#004D83] text-white">
+                    <tr className="bg-gradient-to-r from-[#004D83] to-[#0066A1] text-white">
                       <th className="px-4 py-4 text-left text-sm font-semibold border-r border-white/20">
                         Year
                       </th>
@@ -504,8 +524,8 @@ export default function GrantsConsultancy() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200">
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
+                    <tr className="hover:bg-[#0066A1]/5 transition-colors duration-200">
+                      <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200 font-medium">
                         2017
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-700 border-r border-gray-200">
@@ -525,7 +545,7 @@ export default function GrantsConsultancy() {
           </div>
         </div>
 
-        <div className="h-12"></div>
+        <div className="h-16 bg-white"></div>
       </main>
     </div>
   );
