@@ -32,6 +32,13 @@ export default function DepartmentNavbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close dropdowns when mobile menu is closed
+  useEffect(() => {
+    if (!mobileMenuOpen) {
+      setOpenDropdown(null);
+    }
+  }, [mobileMenuOpen]);
+
   const researchLabsDropdown = [
     { 
       name: "Grants & Consultancy", 
@@ -279,25 +286,46 @@ export default function DepartmentNavbar() {
           <div className="px-6 py-6 space-y-2">
             {navItems.map((item) => (
               <div key={item.name}>
-                <Link
-                  href={item.href}
-                  className={`flex items-center justify-between px-4 py-4 text-base font-semibold rounded-lg transition-all duration-200 ${
-                    isActive(item.href)
-                      ? "text-[#0066A1] bg-blue-50"
-                      : "text-gray-700 hover:text-[#0066A1] hover:bg-gray-50"
-                  }`}
-                  onClick={() => !item.hasDropdown && setMobileMenuOpen(false)}
-                >
-                  <div className="flex items-center gap-2">
-                    {item.icon && <item.icon className="w-5 h-5" />}
-                    <span>{item.name}</span>
-                  </div>
-                  {item.hasDropdown && <ChevronDown size={20} />}
-                </Link>
+                {item.hasDropdown ? (
+                  <button
+                    className={`w-full flex items-center justify-between px-4 py-4 text-base font-semibold rounded-lg transition-all duration-200 ${
+                      openDropdown === item.name
+                        ? "text-[#0066A1] bg-blue-50"
+                        : "text-gray-700 hover:text-[#0066A1] hover:bg-gray-50"
+                    }`}
+                    onClick={() => setOpenDropdown(openDropdown === item.name ? null : item.name)}
+                  >
+                    <div className="flex items-center gap-2">
+                      {item.icon && <item.icon className="w-5 h-5" />}
+                      <span>{item.name}</span>
+                    </div>
+                    <ChevronDown 
+                      size={20} 
+                      className={`transition-transform duration-200 ${
+                        openDropdown === item.name ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={`flex items-center justify-between px-4 py-4 text-base font-semibold rounded-lg transition-all duration-200 ${
+                      isActive(item.href)
+                        ? "text-[#0066A1] bg-blue-50"
+                        : "text-gray-700 hover:text-[#0066A1] hover:bg-gray-50"
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <div className="flex items-center gap-2">
+                      {item.icon && <item.icon className="w-5 h-5" />}
+                      <span>{item.name}</span>
+                    </div>
+                  </Link>
+                )}
 
                 {/* Mobile Dropdown Items */}
-                {item.hasDropdown && item.dropdownItems && (
-                  <div className="ml-6 mt-2 space-y-1 border-l-2 border-gray-200 pl-4">
+                {item.hasDropdown && item.dropdownItems && openDropdown === item.name && (
+                  <div className="ml-6 mt-2 space-y-1 border-l-2 border-gray-200 pl-4 animate-in slide-in-from-top-2 duration-200">
                     {item.dropdownItems.map((dropdownItem) => (
                       <div key={dropdownItem.name}>
                         {dropdownItem.isExternal ? (
