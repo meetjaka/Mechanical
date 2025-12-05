@@ -69,8 +69,32 @@ export default function HeroCarousel() {
       <div className="relative z-10 min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 w-full">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left Content */}
-            <div className="space-y-8">
+            {/* Image - First in mobile, Right in desktop */}
+            <div className="relative lg:order-2">
+              <div className="relative w-full h-[400px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
+                {slides.map((slide, index) => (
+                  <div
+                    key={slide.id}
+                    className={`absolute inset-0 transition-opacity duration-1000 ${
+                      index === currentSlide ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    <Image
+                      src={slide.image}
+                      alt={`${slide.mainTitle} ${slide.highlightTitle}`}
+                      fill
+                      className="object-cover"
+                      priority={index === 0}
+                    />
+                    {/* Overlay on image */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Content - Second in mobile, Left in desktop */}
+            <div className="space-y-8 lg:order-1">
               {/* Subtitle Badge */}
               <div className="inline-block">
                 <span className="inline-block px-4 py-2 bg-[#0066A1] text-white rounded-md text-sm font-semibold tracking-wide">
@@ -122,30 +146,6 @@ export default function HeroCarousel() {
                     <div className="text-sm text-gray-600 font-medium mt-1">
                       {stat.label}
                     </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right Image */}
-            <div className="relative lg:order-2">
-              <div className="relative w-full h-[400px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
-                {slides.map((slide, index) => (
-                  <div
-                    key={slide.id}
-                    className={`absolute inset-0 transition-opacity duration-1000 ${
-                      index === currentSlide ? 'opacity-100' : 'opacity-0'
-                    }`}
-                  >
-                    <Image
-                      src={slide.image}
-                      alt={`${slide.mainTitle} ${slide.highlightTitle}`}
-                      fill
-                      className="object-cover"
-                      priority={index === 0}
-                    />
-                    {/* Overlay on image */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   </div>
                 ))}
               </div>
