@@ -478,31 +478,42 @@ export default function Events() {
   ];
 
   return (
-    <div>
+    <div className="bg-gray-50">
       <DepartmentNavbar />
 
-      <main className="bg-white pt-16">
-        {/* Page Header */}
-        <div className="bg-gradient-to-r from-[#004D83] to-[#0066A1] py-12">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-white">
-              Events
+      <main className="pt-16">
+        {/* Header Section */}
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 border-b border-gray-200">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16">
+            <div className="inline-block px-4 py-2 bg-[#0066A1] text-white rounded-md text-sm font-semibold tracking-wide mb-4">
+              Department Activities
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#004D83] mb-4">
+              Our <span className="text-[#0066A1]">Events</span>
             </h1>
-            <p className="text-white/90 mt-2 text-lg">
-              Department Activities, Workshops, Seminars & Industry Visits
+            <p className="text-lg md:text-xl text-gray-600">
+              Workshops, Seminars & Industry Visits
             </p>
           </div>
         </div>
 
         {/* Events Section */}
-        <div className="py-16 md:py-20 bg-gray-50">
+        <div className="py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <div className="inline-block px-4 py-2 bg-orange-500/10 text-orange-500 rounded-md text-sm font-semibold tracking-wide mb-3">
+                All Events
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#004D83] mb-3">
+                Events <span className="text-[#0066A1]">Calendar</span>
+              </h2>
+            </div>
             {/* Table Container */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="bg-[#004D83] text-white">
+                    <tr className="bg-gradient-to-r from-[#004D83] to-[#0066A1] text-white">
                       <th className="px-4 py-4 text-left text-sm font-semibold border-r border-white/20">
                         #
                       </th>
@@ -551,27 +562,29 @@ export default function Events() {
         </div>
 
         {/* Featured Events Section */}
-        <div className="py-16 md:py-20 bg-white">
+        <div className="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="mb-12">
+            <div className="text-center mb-12">
+              <div className="inline-block px-4 py-2 bg-[#0066A1]/10 text-[#0066A1] rounded-md text-sm font-semibold tracking-wide mb-3">
+                Highlights
+              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-[#004D83] mb-3">
-                Featured Events
+                Featured <span className="text-[#0066A1]">Events</span>
               </h2>
-              <div className="w-24 h-1 bg-[#004D83]"></div>
             </div>
 
             <div className="space-y-16">
               {/* Event 1 */}
-              <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div className="p-8">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  <div className="p-8 md:p-10">
                     <h3 className="text-2xl font-bold text-[#004D83] mb-2">
                       Fusion 360 (Webinar)
                     </h3>
-                    <p className="text-sm text-gray-600 mb-4">
+                    <p className="text-sm text-[#0066A1] font-semibold mb-4">
                       Date: 08/03/2021
                     </p>
-                    <p className="text-gray-700 leading-7 text-justify">
+                    <p className="text-gray-700 leading-8 text-base">
                       This webinar was carried out by the expert Mr. Vipul
                       Hingu, Khodiyar CAD Center Pvt. Ltd. for first year
                       mechanical and electrical students. Expert talk included
@@ -582,7 +595,7 @@ export default function Events() {
                       in webinar.
                     </p>
                   </div>
-                  <div className="relative h-64 lg:h-auto bg-white">
+                  <div className="relative h-64 lg:h-auto bg-white min-h-[300px]">
                     <Image
                       src="/event/e1.png"
                       alt="Fusion 360 Webinar"
@@ -594,9 +607,9 @@ export default function Events() {
               </div>
 
               {/* Event 2 */}
-              <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div className="order-2 lg:order-1 relative h-64 lg:h-auto bg-white">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  <div className="order-2 lg:order-1 relative h-64 lg:h-auto bg-white min-h-[300px]">
                     <Image
                       src="/event/e2.png"
                       alt="Research Trends in Advanced Materials Workshop"
@@ -604,14 +617,14 @@ export default function Events() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="order-1 lg:order-2 p-8">
+                  <div className="order-1 lg:order-2 p-8 md:p-10">
                     <h3 className="text-2xl font-bold text-[#004D83] mb-2">
                       Research Trends in Advanced Materials (Workshop)
                     </h3>
-                    <p className="text-sm text-gray-600 mb-4">
+                    <p className="text-sm text-[#0066A1] font-semibold mb-4">
                       Date: 06/11/2020 to 07/11/2020
                     </p>
-                    <p className="text-gray-700 leading-7 text-justify">
+                    <p className="text-gray-700 leading-8 text-base">
                       In this workshop research scholars, faculties from various
                       institutes of Gujarat had participated. The expert talks
                       during the workshop were organized to explore the various
@@ -629,17 +642,17 @@ export default function Events() {
               </div>
 
               {/* Event 3 */}
-              <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div className="p-8">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  <div className="p-8 md:p-10">
                     <h3 className="text-2xl font-bold text-[#004D83] mb-2">
                       Manufacturing Processes & ESPRIT CAM software-by SOPAN
                       Institute (Workshop)
                     </h3>
-                    <p className="text-sm text-gray-600 mb-4">
+                    <p className="text-sm text-[#0066A1] font-semibold mb-4">
                       Date: 30/10/2020 to 31/10/2020
                     </p>
-                    <p className="text-gray-700 leading-7 text-justify">
+                    <p className="text-gray-700 leading-8 text-base">
                       ESPIRIT CAM software is a global favorite for all types of
                       mechanical applications ranging from small hometown job
                       shops to multifunctional enterprises, client trust ESPRIT
@@ -665,9 +678,9 @@ export default function Events() {
               </div>
 
               {/* Event 4 */}
-              <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div className="order-2 lg:order-1 relative h-64 lg:h-auto bg-white">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  <div className="order-2 lg:order-1 relative h-64 lg:h-auto bg-white min-h-[300px]">
                     <Image
                       src="/event/e4.png"
                       alt="Solidworks Webinar"
@@ -675,15 +688,15 @@ export default function Events() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="order-1 lg:order-2 p-8">
+                  <div className="order-1 lg:order-2 p-8 md:p-10">
                     <h3 className="text-2xl font-bold text-[#004D83] mb-2">
                       Know how to make part modeling, assembly & drawing using
                       Solidworks- by SOPAN Institute (Webinar)
                     </h3>
-                    <p className="text-sm text-gray-600 mb-4">
+                    <p className="text-sm text-[#0066A1] font-semibold mb-4">
                       Date: 05/09/2020
                     </p>
-                    <p className="text-gray-700 leading-7 text-justify">
+                    <p className="text-gray-700 leading-8 text-base">
                       This webinar demonstrated the Modeling, Assembly and
                       Drawing for different components using SOLIDWORKS. Mr.
                       Naimesh Shethiya, SOPAN Institute of Engineering & Design
@@ -696,13 +709,13 @@ export default function Events() {
               </div>
 
               {/* Event 5 */}
-              <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div className="p-8">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  <div className="p-8 md:p-10">
                     <h3 className="text-2xl font-bold text-[#004D83] mb-2">
                       EV Mathematical Modeling on Sci-Lab (Workshop)
                     </h3>
-                    <p className="text-sm text-gray-600 mb-4">
+                    <p className="text-sm text-[#0066A1] font-semibold mb-4">
                       Date: 22/08/2020 to 23/08/2020
                     </p>
                     <p className="text-gray-700 leading-7 text-justify">
@@ -1400,7 +1413,7 @@ export default function Events() {
           </div>
         </div>
 
-        <div className="h-12"></div>
+        <div className="h-16 bg-white"></div>
       </main>
     </div>
   );

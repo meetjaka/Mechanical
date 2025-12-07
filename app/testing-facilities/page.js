@@ -2,38 +2,44 @@ import DepartmentNavbar from "@/components/DepartmentNavbar";
 
 export default function TestingFacilities() {
   return (
-    <div>
+    <div className="bg-gray-50">
       <DepartmentNavbar />
 
-      <main className="bg-white pt-16">
-        {/* Page Header */}
-        <div className="bg-gradient-to-r from-[#004D83] to-[#0066A1] py-12">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-white">
-              Testing Facilities
+      <main className="pt-16">
+        {/* Header Section */}
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 border-b border-gray-200">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16">
+            <div className="inline-block px-4 py-2 bg-[#0066A1] text-white rounded-md text-sm font-semibold tracking-wide mb-4">
+              Facilities
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#004D83] mb-4">
+              Testing <span className="text-[#0066A1]">Facilities</span>
             </h1>
-            <p className="text-white/90 mt-2 text-lg">
+            <p className="text-lg md:text-xl text-gray-600">
               Material Testing and Characterization
             </p>
           </div>
         </div>
 
         {/* Testing Facilities Section */}
-        <div className="py-16 md:py-20 bg-gray-50">
+        <div className="py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="mb-12">
+            <div className="text-center mb-12">
+              <div className="inline-block px-4 py-2 bg-orange-500/10 text-orange-500 rounded-md text-sm font-semibold tracking-wide mb-3">
+                Testing Services
+              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-[#004D83] mb-3">
-                MATERIAL TESTING AND CHARACTERIZATION
+                Material Testing &{" "}
+                <span className="text-[#0066A1]">Characterization</span>
               </h2>
-              <div className="w-24 h-1 bg-[#004D83]"></div>
             </div>
 
             {/* Table Container */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="bg-[#004D83] text-white">
+                    <tr className="bg-gradient-to-r from-[#004D83] to-[#0066A1] text-white">
                       <th className="px-4 py-4 text-left text-sm font-semibold border-r border-white/20">
                         Sr. No.
                       </th>
@@ -162,21 +168,23 @@ export default function TestingFacilities() {
         </div>
 
         {/* Manufacturing Technology Section */}
-        <div className="py-16 md:py-20 bg-white">
+        <div className="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="mb-12">
+            <div className="text-center mb-12">
+              <div className="inline-block px-4 py-2 bg-[#0066A1]/10 text-[#0066A1] rounded-md text-sm font-semibold tracking-wide mb-3">
+                Manufacturing
+              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-[#004D83] mb-3">
-                MANUFACTURING TECHNOLOGY
+                Manufacturing <span className="text-[#0066A1]">Technology</span>
               </h2>
-              <div className="w-24 h-1 bg-[#004D83]"></div>
             </div>
 
             {/* Table Container */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="bg-[#004D83] text-white">
+                    <tr className="bg-gradient-to-r from-[#004D83] to-[#0066A1] text-white">
                       <th className="px-4 py-4 text-left text-sm font-semibold border-r border-white/20">
                         Sr. No.
                       </th>
@@ -271,35 +279,43 @@ export default function TestingFacilities() {
         </div>
 
         {/* Instructions Section */}
-        <div className="py-16 md:py-20 bg-gray-50">
+        <div className="py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="mb-12">
+            <div className="text-center mb-12">
+              <div className="inline-block px-4 py-2 bg-orange-500/10 text-orange-500 rounded-md text-sm font-semibold tracking-wide mb-3">
+                Guidelines
+              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-[#004D83] mb-3">
-                INSTRUCTIONS
+                Usage <span className="text-[#0066A1]">Instructions</span>
               </h2>
-              <div className="w-24 h-1 bg-[#004D83]"></div>
             </div>
 
-            <div className="bg-white rounded-lg shadow-md p-8 md:p-12">
-              <ul className="space-y-4 text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-[#004D83] font-bold mr-3 mt-1">•</span>
-                  <span className="text-base md:text-lg">
+            <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-200 p-8 md:p-12 hover:shadow-xl transition-all duration-300">
+              <ul className="space-y-6 text-gray-700">
+                <li className="flex items-start gap-4">
+                  <span className="text-[#0066A1] font-bold text-2xl flex-shrink-0">
+                    •
+                  </span>
+                  <span className="text-base md:text-lg leading-8">
                     Prior request to use the instrument should be sent to Head
                     of the Department, Mechanical Engineering.
                   </span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-[#004D83] font-bold mr-3 mt-1">•</span>
-                  <span className="text-base md:text-lg">
+                <li className="flex items-start gap-4">
+                  <span className="text-[#0066A1] font-bold text-2xl flex-shrink-0">
+                    •
+                  </span>
+                  <span className="text-base md:text-lg leading-8">
                     Only on approval and given date, the person should come to
                     avail the service with the required sample (if applicable)
                     along–with the Requisition slip duly filled and signed.
                   </span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-[#004D83] font-bold mr-3 mt-1">•</span>
-                  <span className="text-base md:text-lg">
+                <li className="flex items-start gap-4">
+                  <span className="text-[#0066A1] font-bold text-2xl flex-shrink-0">
+                    •
+                  </span>
+                  <span className="text-base md:text-lg leading-8">
                     The payment for the same should be done in advance.
                   </span>
                 </li>
@@ -308,7 +324,7 @@ export default function TestingFacilities() {
           </div>
         </div>
 
-        <div className="h-12"></div>
+        <div className="h-16 bg-white"></div>
       </main>
     </div>
   );
