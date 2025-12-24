@@ -14,7 +14,7 @@ export default function FestoPage() {
               Experience Centre
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-[#004D83] mb-4">
-              FESTO-EXPERIENCE <span className="text-[#0066A1]">Centre</span>
+              FESTO-EXPERIENCE <span className="text-[#0066A1]">CENTRE</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600">
               Pneumatics, Hydraulics & Factory Automation
