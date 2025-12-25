@@ -33,12 +33,12 @@ export default function FestoPage() {
                 Experience <span className="text-[#0066A1]">Centre</span>
               </h2>
             </div>
-            <div className="relative w-full h-[350px] md:h-[450px] overflow-hidden rounded-2xl shadow-lg border border-gray-200">
+            <div className="relative w-full h-[350px] md:h-[450px] overflow-hidden rounded-2xl shadow-lg">
               <Image
                 src="/festo.jpg"
                 alt="FESTO Centre of Excellence"
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
               />
             </div>

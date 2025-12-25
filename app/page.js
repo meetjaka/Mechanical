@@ -82,7 +82,7 @@ export default function Home() {
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+      scrollContainerRef.current.scrollBy({ left: -300, behavior: "smooth" });
       setIsAutoScrolling(false);
       setTimeout(() => setIsAutoScrolling(true), 3000);
     }
@@ -90,7 +90,7 @@ export default function Home() {
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+      scrollContainerRef.current.scrollBy({ left: 300, behavior: "smooth" });
       setIsAutoScrolling(false);
       setTimeout(() => setIsAutoScrolling(true), 3000);
     }
@@ -98,7 +98,7 @@ export default function Home() {
 
   const scrollSoftwareLeft = () => {
     if (softwareScrollRef.current) {
-      softwareScrollRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+      softwareScrollRef.current.scrollBy({ left: -300, behavior: "smooth" });
       setIsSoftwareAutoScrolling(false);
       setTimeout(() => setIsSoftwareAutoScrolling(true), 3000);
     }
@@ -106,7 +106,7 @@ export default function Home() {
 
   const scrollSoftwareRight = () => {
     if (softwareScrollRef.current) {
-      softwareScrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+      softwareScrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
       setIsSoftwareAutoScrolling(false);
       setTimeout(() => setIsSoftwareAutoScrolling(true), 3000);
     }
@@ -170,9 +170,9 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {/* Mini Project Evaluation */}
-              <div className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#0066A1]">
+              <div className="group best-practices-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#0066A1]">
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 icon-spot group-hover:scale-105 transition-transform duration-300">
                     <MessageSquare className="w-7 h-7 text-[#0066A1]" />
                   </div>
                   <div className="flex-1">
@@ -180,16 +180,17 @@ export default function Home() {
                       Mini Project Evaluation
                     </h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      Comprehensive student assessment through hands-on mini projects
+                      Comprehensive student assessment through hands-on mini
+                      projects
                     </p>
                   </div>
                 </div>
               </div>
 
               {/* Book World Initiative */}
-              <div className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#0066A1]">
+              <div className="group best-practices-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#0066A1]">
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 icon-spot group-hover:scale-105 transition-transform duration-300">
                     <BookOpen className="w-7 h-7 text-[#0066A1]" />
                   </div>
                   <div className="flex-1">
@@ -197,16 +198,17 @@ export default function Home() {
                       Book World Initiative
                     </h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      Reading culture development to transform student perspectives
+                      Reading culture development to transform student
+                      perspectives
                     </p>
                   </div>
                 </div>
               </div>
 
               {/* Staff Meditation Program */}
-              <div className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-orange-500">
+              <div className="group best-practices-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-orange-500">
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-orange-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-orange-50 rounded-lg flex items-center justify-center flex-shrink-0 icon-spot group-hover:scale-105 transition-transform duration-300">
                     <Users className="w-7 h-7 text-orange-500" />
                   </div>
                   <div className="flex-1">
@@ -221,9 +223,9 @@ export default function Home() {
               </div>
 
               {/* Student Counseling */}
-              <div className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#0066A1]">
+              <div className="group best-practices-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#0066A1]">
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 icon-spot group-hover:scale-105 transition-transform duration-300">
                     <UserCheck className="w-7 h-7 text-[#0066A1]" />
                   </div>
                   <div className="flex-1">
@@ -238,9 +240,9 @@ export default function Home() {
               </div>
 
               {/* MOOC Integration */}
-              <div className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#0066A1]">
+              <div className="group best-practices-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#0066A1]">
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 icon-spot group-hover:scale-105 transition-transform duration-300">
                     <FileText className="w-7 h-7 text-[#0066A1]" />
                   </div>
                   <div className="flex-1">
@@ -255,9 +257,9 @@ export default function Home() {
               </div>
 
               {/* Digital Presence */}
-              <div className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-orange-500">
+              <div className="group best-practices-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-orange-500">
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-orange-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-orange-50 rounded-lg flex items-center justify-center flex-shrink-0 icon-spot group-hover:scale-105 transition-transform duration-300">
                     <Globe className="w-7 h-7 text-orange-500" />
                   </div>
                   <div className="flex-1">
@@ -272,9 +274,9 @@ export default function Home() {
               </div>
 
               {/* Google Classroom */}
-              <div className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#0066A1]">
+              <div className="group best-practices-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#0066A1]">
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 icon-spot group-hover:scale-105 transition-transform duration-300">
                     <Monitor className="w-7 h-7 text-[#0066A1]" />
                   </div>
                   <div className="flex-1">
@@ -289,9 +291,9 @@ export default function Home() {
               </div>
 
               {/* Industry Collaboration */}
-              <div className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#0066A1]">
+              <div className="group best-practices-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#0066A1]">
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 icon-spot group-hover:scale-105 transition-transform duration-300">
                     <BarChart className="w-7 h-7 text-[#0066A1]" />
                   </div>
                   <div className="flex-1">
@@ -306,9 +308,9 @@ export default function Home() {
               </div>
 
               {/* Expert Sessions */}
-              <div className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-orange-500">
+              <div className="group best-practices-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-orange-500">
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-orange-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-orange-50 rounded-lg flex items-center justify-center flex-shrink-0 icon-spot group-hover:scale-105 transition-transform duration-300">
                     <Users className="w-7 h-7 text-orange-500" />
                   </div>
                   <div className="flex-1">
@@ -331,10 +333,13 @@ export default function Home() {
                   <div className="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Eye className="w-8 h-8 text-[#0066A1]" />
                   </div>
-                  <h3 className="text-2xl font-bold text-[#0066A1] pt-3">Vision</h3>
+                  <h3 className="text-2xl font-bold text-[#0066A1] pt-3">
+                    Vision
+                  </h3>
                 </div>
                 <p className="text-gray-700 text-base leading-relaxed">
-                  To be recognized as a center for outstanding education and research in field of mechanical engineering.
+                  To be recognized as a center for outstanding education and
+                  research in field of mechanical engineering.
                 </p>
               </div>
 
@@ -344,10 +349,14 @@ export default function Home() {
                   <div className="w-16 h-16 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Target className="w-8 h-8 text-orange-500" />
                   </div>
-                  <h3 className="text-2xl font-bold text-orange-500 pt-3">Mission</h3>
+                  <h3 className="text-2xl font-bold text-orange-500 pt-3">
+                    Mission
+                  </h3>
                 </div>
                 <p className="text-gray-700 text-base leading-relaxed">
-                  To produce well qualified engineers, who are innovative, contributors to their profession by catering to diverse societal needs.
+                  To produce well qualified engineers, who are innovative,
+                  contributors to their profession by catering to diverse
+                  societal needs.
                 </p>
               </div>
             </div>
@@ -490,8 +499,7 @@ export default function Home() {
                     automotive engineering excellence and innovation.
                   </p>
 
-                  {/* Action Button */}
-                  <button className="w-full btn-secondary">Learn More</button>
+                  {/* Action Button removed per request */}
                 </div>
               </ProfessionalCard>
             </div>
@@ -532,15 +540,15 @@ export default function Home() {
                 <ChevronRight size={24} />
               </button>
 
-              <div 
+              <div
                 ref={scrollContainerRef}
                 className="relative overflow-x-auto scrollbar-hide py-8 px-12"
-                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 {/* Gradient Overlays */}
                 <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
                 <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-100 to-transparent z-10 pointer-events-none"></div>
-                
+
                 <div className="flex gap-12 sm:gap-16 md:gap-20 items-center min-w-max px-4">
                   <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                     <img
@@ -863,15 +871,15 @@ export default function Home() {
                 <ChevronRight size={24} />
               </button>
 
-              <div 
+              <div
                 ref={softwareScrollRef}
                 className="relative overflow-x-auto scrollbar-hide py-8 px-12"
-                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 {/* Gradient Overlays */}
                 <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
                 <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
-                
+
                 <div className="flex gap-8 sm:gap-12 md:gap-16 items-center min-w-max px-4">
                   <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                     <img
@@ -1066,7 +1074,8 @@ export default function Home() {
                 CONTACT US
               </h2>
               <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-4">
-                We're here to answer your questions and provide information about our programs
+                We're here to answer your questions and provide information
+                about our programs
               </p>
             </div>
 
@@ -1183,11 +1192,11 @@ export default function Home() {
                   Visit our campus and experience world-class facilities
                 </p>
               </div>
-              
+
               <div className="relative group">
                 {/* Decorative gradient background */}
                 <div className="absolute -inset-4 bg-gradient-to-r from-[#0066A1] to-orange-500 rounded-3xl opacity-10 group-hover:opacity-20 blur-2xl transition-opacity duration-500"></div>
-                
+
                 {/* Map container */}
                 <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden border-4 border-gray-100 group-hover:border-[#0066A1] transition-all duration-500">
                   <iframe
@@ -1201,7 +1210,7 @@ export default function Home() {
                     title="CHARUSAT Campus Location"
                     className="w-full"
                   ></iframe>
-                  
+
                   {/* Get Directions Button Overlay */}
                   <div className="absolute bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-y-0 translate-y-4">
                     <a
@@ -1227,12 +1236,14 @@ export default function Home() {
                     </a>
                   </div>
                 </div>
-                
+
                 {/* Location Badge */}
                 <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg border border-gray-200">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-[#0066A1] rounded-full animate-pulse"></div>
-                    <span className="text-sm font-semibold text-[#004D83]">CHARUSAT Campus</span>
+                    <span className="text-sm font-semibold text-[#004D83]">
+                      CHARUSAT Campus
+                    </span>
                   </div>
                 </div>
               </div>

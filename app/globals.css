@@ -211,3 +211,22 @@ html {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Best Practices card hover effect */
+.best-practices-card {
+  transition: transform 0.28s cubic-bezier(.2,.9,.2,1), box-shadow 0.28s cubic-bezier(.2,.9,.2,1), border-color 0.28s;
+  will-change: transform, box-shadow;
+}
+
+.best-practices-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 30px -6px var(--shadow-hover), 0 6px 12px -6px rgba(0,0,0,0.06);
+}
+
+.best-practices-card .icon-spot {
+  transition: transform 0.28s cubic-bezier(.2,.9,.2,1);
+}
+
+.best-practices-card:hover .icon-spot {
+  transform: scale(1.08);
+}

@@ -574,6 +574,156 @@ export default function Events() {
             </div>
 
             <div className="space-y-16">
+              {/* New Event 1 */}
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  <div className="p-8 md:p-10">
+                    <h3 className="text-2xl font-bold text-[#004D83] mb-2">
+                      CAD Modeling and Drafting using Fusion 360 (Workshop)
+                    </h3>
+                    <p className="text-sm text-[#0066A1] font-semibold mb-4">
+                      Date: 15/12/2025
+                    </p>
+                    <p className="text-gray-700 leading-8 text-base">
+                      This workshop is designed to equip students with essential skills in modern Computer-Aided Design (CAD). This workshop will provide hands-on exposure to 3D modeling, parametric design, assembly creation, and technical drafting using Autodesk Fusion 360, one of the most widely used tools in the design and manufacturing industry. The session will help students develop a strong foundation in digital design workflows, enabling them to visualize, simulate, and document engineering components effectively. The workshop was conducted online, ensuring flexibility and accessibility for all participants. After participating in this workshop, students will be able to understand CAD fundamentals, develop 3D Modeling skills, generate detailed engineering drawings, learn assembly & visualization, improve problem-solving & design thinking and enhance career & project readiness.
+                    </p>
+                  </div>
+                  <div className="relative h-64 lg:h-auto bg-white min-h-[300px]">
+                    <Image
+                      src="/event/e25.png"
+                      alt="CAD Modeling and Drafting using Fusion 360 Workshop"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* New Event 2 */}
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  <div className="order-2 lg:order-1 relative h-64 lg:h-auto bg-white min-h-[300px]">
+                    <Image
+                      src="/event/e26.png"
+                      alt="CAD Design Event - CADATHON"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="order-1 lg:order-2 p-8 md:p-10">
+                    <h3 className="text-2xl font-bold text-[#004D83] mb-2">
+                      CAD Design Event - CADATHON – Sketch the Spark, Draft the Future
+                    </h3>
+                    <p className="text-sm text-[#0066A1] font-semibold mb-4">
+                      Date: 18/09/2025
+                    </p>
+                    <p className="text-gray-700 leading-8 text-base">
+                      CAD Student Club of Chamos Matrusantha Department of Mechanical Engineering organised a competition of modelling and assembly of components using Solidworks software titled "CADATHON" on 18th September, 2025 for Mechanical Engineering students from various universities across the Anand region. The event was organized with our industrial partner Engineering Technique, Vadodara. The theme of the event was "Sketch the Spark, Draft the Future", focusing on testing students' creativity, speed, and design thinking skills in CAD modeling within a limited time frame. The event received enthusiastic participation with students showcasing innovative design solutions. The competition created a healthy environment of learning, collaboration, and competitive spirit. Mr. Gaurav Patel from Engineering Technique was invited for evaluation and judging the event. The total prize pool of ₹ 6500 was awarded to the winners, and certificates were distributed to all participants.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* New Event 3 */}
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  <div className="p-8 md:p-10">
+                    <h3 className="text-2xl font-bold text-[#004D83] mb-2">
+                      Numerical Modeling of Welding and Additive Manufacturing (Expert Talk)
+                    </h3>
+                    <p className="text-sm text-[#0066A1] font-semibold mb-4">
+                      Date: 25/08/2025
+                    </p>
+                    <p className="text-gray-700 leading-8 text-base">
+                      This expert talk on "Numerical Modeling of Welding and Additive Manufacturing" on August 25, 2025, for second, third, and final year B.Tech. Mechanical Engineering students. The session was delivered by Dr. Amit Arora, Associate Professor in the Materials Engineering Department at IIT Gandhinagar, who also leads the Advanced Materials Processing Research Group. During the session, Dr. Arora provided an in-depth overview of the fundamentals and applications of numerical modeling in understanding welding and additive manufacturing. Through case studies and examples from his research group, he showcased how numerical simulations are used to design new alloys, optimize printing strategies, and achieve high-performance components. The talk concluded with a vote of thanks, acknowledging Dr. Arora's efforts in sharing his expertise and motivating students to explore research in welding, additive manufacturing, and simulation-based engineering.
+                    </p>
+                  </div>
+                  <div className="relative h-64 lg:h-auto bg-white">
+                    <Image
+                      src="/event/e27.png"
+                      alt="Numerical Modeling of Welding and Additive Manufacturing Expert Talk"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* New Event 4 */}
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  <div className="order-2 lg:order-1 relative h-64 lg:h-auto bg-white min-h-[300px]">
+                    <Image
+                      src="/event/e28.png"
+                      alt="Faculty Development Program on SOLIDWORKS"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="order-1 lg:order-2 p-8 md:p-10">
+                    <h3 className="text-2xl font-bold text-[#004D83] mb-2">
+                      Faculty Development Program on SOLIDWORKS Modelling & Simulation
+                    </h3>
+                    <p className="text-sm text-[#0066A1] font-semibold mb-4">
+                      Date: 02/06/2025 to 06/06/2025
+                    </p>
+                    <p className="text-gray-700 leading-8 text-base">
+                      In a continued effort to align academic excellence with the evolving needs of the industry, CHARUSAT remains committed to preparing students for real-world challenges. Recognizing the importance of staying current with technological advancements, the university also ensures its faculty members continuously upgrade their technical knowledge. As part of this initiative, the Department of Mechanical Engineering, under the aegis of CHAMOS Matrusanstha, organized a Faculty Development Program (FDP) on "SOLIDWORKS Modelling & Simulation" from June 02–06, 2025, in collaboration with Engineering Technique, Vadodara. The sessions were led by experts including Mr. Nilesh Wakode, Industry Consultant Manager at Dassault Systèmes India, and three professionals from Engineering Technique — Mr. Ashutosh Rajput (Design Expert – Technical Lead), Mr. Dhruval Parmar (Application Engineer – CAD), and Mr. Gaurav Patel (Application Engineer – Simulation). The week-long FDP aimed to enhance the technical proficiency of faculty members in advanced 3D modelling and simulation techniques using SOLIDWORKS. The program included hands-on sessions, demonstrations, and case studies tailored to bridge the gap between academic instruction and industrial practices.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* New Event 5 */}
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  <div className="p-8 md:p-10">
+                    <h3 className="text-2xl font-bold text-[#004D83] mb-2">
+                      One Day Workshop on CAD Modeling and Drafting
+                    </h3>
+                    <p className="text-sm text-[#0066A1] font-semibold mb-4">
+                      Date: 12/04/2025
+                    </p>
+                    <p className="text-gray-700 leading-8 text-base">
+                      CHAMOS Matrusanstha Department of Mechanical Engineering organized a one-day workshop on "CAD Modeling & Drafting" on 12th April 2025. The sessions of workshop were conducted by Mr. Naimesh Shetiya, Managing Director, Sopan Institute of Engineering & Design and Founder & Director, Jenik Engineering Services and Dr. Punit Patel, Assistant Professor, Department of Mechanical Engineering. 509 participants from the Second Semester of B.Tech. CE/IT/CSE/AIML/EC have participated in the workshop. The sessions explore techniques of how to make modelling and drafting for engineering components using CAD software such as Fusion 360 & SolidWorks. It also discovers how to make part and assembly drawings for various engineering objects. Moreover, it explores the concept of rendering and animation concepts to demonstrate the object.
+                    </p>
+                  </div>
+                  <div className="relative h-64 lg:h-auto bg-white">
+                    <Image
+                      src="/event/e29.png"
+                      alt="One Day Workshop on CAD Modeling and Drafting"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* New Event 6 */}
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  <div className="order-2 lg:order-1 relative h-64 lg:h-auto bg-white min-h-[300px]">
+                    <Image
+                      src="/event/e30.png"
+                      alt="Industrial Visit at Adani Industries"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="order-1 lg:order-2 p-8 md:p-10">
+                    <h3 className="text-2xl font-bold text-[#004D83] mb-2">
+                      Industrial Visit at Adani Industries (Power, Solar, Wind, Wilmar, Port, SEZ), at Mundra, Kuchh
+                    </h3>
+                    <p className="text-sm text-[#0066A1] font-semibold mb-4">
+                      Date: 04/04/2025 to 05/04/2025
+                    </p>
+                    <p className="text-gray-700 leading-8 text-base">
+                      The CHAMOS Matrusanstha Department of Mechanical Engineering has organized two day industry visit at various Adani Industries (Power, Solar, Wind, Wilmar, Port, SEZ) at Mundra, Kutchh, during 4th & 5th April, 2025 under Project Udan scheme of Adani Foundation. Total 47 students of B. Tech. Mechanical Engineering 4th & 6th semester and M.Tech. AMT 2nd semester along with 4 staff members have participated in this visit. Adani Group is a diversified organisation in India comprising 10 publicly traded companies. It has created a world class transport and utility infrastructure portfolio that has a pan-India presence. Students gained insights into the functioning and integration of advanced technologies used in thermal power generation, port logistics, oil refining, and solar power production. The visit enhanced students' understanding of mechanical engineering applications in industrial environments, boosting their interest and readiness for future industry roles.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               {/* Event 1 */}
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
@@ -600,7 +750,7 @@ export default function Events() {
                       src="/event/e1.png"
                       alt="Fusion 360 Webinar"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                 </div>
@@ -614,7 +764,7 @@ export default function Events() {
                       src="/event/e2.png"
                       alt="Research Trends in Advanced Materials Workshop"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                   <div className="order-1 lg:order-2 p-8 md:p-10">
@@ -671,7 +821,7 @@ export default function Events() {
                       src="/event/e3.png"
                       alt="Manufacturing Processes & ESPRIT CAM Workshop"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                 </div>
@@ -685,7 +835,7 @@ export default function Events() {
                       src="/event/e4.png"
                       alt="Solidworks Webinar"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                   <div className="order-1 lg:order-2 p-8 md:p-10">
@@ -737,7 +887,7 @@ export default function Events() {
                       src="/event/e5.png"
                       alt="EV Mathematical Modeling on Sci-Lab Workshop"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                 </div>
@@ -751,7 +901,7 @@ export default function Events() {
                       src="/event/e6.png"
                       alt="Think, Design and Visualize with Revit MEP Webinar"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                   <div className="order-1 lg:order-2 p-8">
@@ -802,7 +952,7 @@ export default function Events() {
                       src="/event/e7.png"
                       alt="Solid works: Introduction and Basic Webinar"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                 </div>
@@ -816,7 +966,7 @@ export default function Events() {
                       src="/event/e8.png"
                       alt="Formula Bharat 2020"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                   <div className="order-1 lg:order-2 p-8">
@@ -865,7 +1015,7 @@ export default function Events() {
                       src="/event/e9.png"
                       alt="Fundamentals of Electric Vehicle and EV Projects Workshop"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                 </div>
@@ -879,7 +1029,7 @@ export default function Events() {
                       src="/event/e10.png"
                       alt="Certificate program on Basic Pneumatics and Electro-Pneumatics"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                   <div className="order-1 lg:order-2 p-8">
@@ -933,21 +1083,21 @@ export default function Events() {
                       src="/event/e11.png"
                       alt="Solidworks Advanced Workshop"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Event 12 */}
-              <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md">
+              {/* <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   <div className="order-2 lg:order-1 relative h-64 lg:h-auto bg-white">
                     <Image
                       src="/event/e12.png"
                       alt="One day workshop on Fusion 360"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                   <div className="order-1 lg:order-2 p-8">
@@ -976,7 +1126,7 @@ export default function Events() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Event 13 */}
               <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md">
@@ -1005,7 +1155,7 @@ export default function Events() {
                       src="/event/e13.png"
                       alt="Hands-on training on LaTeX"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                 </div>
@@ -1019,7 +1169,7 @@ export default function Events() {
                       src="/event/e14.png"
                       alt="One day workshop on Fusion 360"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                   <div className="order-1 lg:order-2 p-8">
@@ -1077,7 +1227,7 @@ export default function Events() {
                       src="/event/e15.png"
                       alt="Seminar on Aluminium-Silicon Cast Alloy"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                 </div>
@@ -1091,7 +1241,7 @@ export default function Events() {
                       src="/event/e16.png"
                       alt="Workshop on Solidworks"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                   <div className="order-1 lg:order-2 p-8">
@@ -1146,7 +1296,7 @@ export default function Events() {
                       src="/event/e17.png"
                       alt="Workshop on Fusion 360"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                 </div>
@@ -1160,7 +1310,7 @@ export default function Events() {
                       src="/event/e18.png"
                       alt="Fluid Mechanics Mini Project Exhibition-2019"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                   <div className="order-1 lg:order-2 p-8">
@@ -1212,7 +1362,7 @@ export default function Events() {
                       src="/event/e19.png"
                       alt="Creative Model Exhibition 2019"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                 </div>
@@ -1226,7 +1376,7 @@ export default function Events() {
                       src="/event/e20.png"
                       alt="Poster presentation on Effective Ways to Make Yourself More Employable"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                   <div className="order-1 lg:order-2 p-8">
@@ -1298,7 +1448,7 @@ export default function Events() {
                       src="/event/e21.png"
                       alt="Workshop on Research trends in renewable energy sources"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                 </div>
@@ -1312,7 +1462,7 @@ export default function Events() {
                       src="/event/e22.png"
                       alt="Workshop on Know Your Vehicle"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                   <div className="order-1 lg:order-2 p-8">
@@ -1369,7 +1519,7 @@ export default function Events() {
                       src="/event/e23.png"
                       alt="Seminar on Career Growth through Six Sigma"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                 </div>
@@ -1383,7 +1533,7 @@ export default function Events() {
                       src="/event/e24.png"
                       alt="One week Mechanical Engineer Skill Development Program"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                   <div className="order-1 lg:order-2 p-8">
