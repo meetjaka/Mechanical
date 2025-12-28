@@ -258,8 +258,6 @@ export default function DepartmentNavbar() {
                           ) : dropdownItem.href ? (
                             <Link
                               href={dropdownItem.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
                               className={`group/item flex items-start gap-3 px-4 py-3 text-sm transition-all duration-200 rounded-xl ${
                                 isActive(dropdownItem.href)
                                   ? "bg-blue-100 border border-blue-200"
@@ -417,8 +415,6 @@ export default function DepartmentNavbar() {
                           ) : dropdownItem.href ? (
                             <Link
                               href={dropdownItem.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
                               className={`flex items-center gap-2 px-4 py-3 text-sm rounded-lg transition-colors font-medium ${
                                 isActive(dropdownItem.href)
                                   ? "text-[#0066A1] bg-blue-100 border border-blue-200"
