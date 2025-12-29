@@ -497,7 +497,7 @@ export default function Events() {
           </div>
         </div>
 
-        {/* Events Section */}
+        {/* Events Section
         <div className="py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -508,7 +508,8 @@ export default function Events() {
                 Events <span className="text-[#0066A1]">Calendar</span>
               </h2>
             </div>
-            {/* Table Container */}
+            Table Container
+
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
               <div className="overflow-x-auto">
                 <table className="w-full">
@@ -559,7 +560,7 @@ export default function Events() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Featured Events Section */}
         <div className="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white">
@@ -585,7 +586,22 @@ export default function Events() {
                       Date: 15/12/2025
                     </p>
                     <p className="text-gray-700 leading-8 text-base">
-                      This workshop is designed to equip students with essential skills in modern Computer-Aided Design (CAD). This workshop will provide hands-on exposure to 3D modeling, parametric design, assembly creation, and technical drafting using Autodesk Fusion 360, one of the most widely used tools in the design and manufacturing industry. The session will help students develop a strong foundation in digital design workflows, enabling them to visualize, simulate, and document engineering components effectively. The workshop was conducted online, ensuring flexibility and accessibility for all participants. After participating in this workshop, students will be able to understand CAD fundamentals, develop 3D Modeling skills, generate detailed engineering drawings, learn assembly & visualization, improve problem-solving & design thinking and enhance career & project readiness.
+                      This workshop is designed to equip students with essential
+                      skills in modern Computer-Aided Design (CAD). This
+                      workshop will provide hands-on exposure to 3D modeling,
+                      parametric design, assembly creation, and technical
+                      drafting using Autodesk Fusion 360, one of the most widely
+                      used tools in the design and manufacturing industry. The
+                      session will help students develop a strong foundation in
+                      digital design workflows, enabling them to visualize,
+                      simulate, and document engineering components effectively.
+                      The workshop was conducted online, ensuring flexibility
+                      and accessibility for all participants. After
+                      participating in this workshop, students will be able to
+                      understand CAD fundamentals, develop 3D Modeling skills,
+                      generate detailed engineering drawings, learn assembly &
+                      visualization, improve problem-solving & design thinking
+                      and enhance career & project readiness.
                     </p>
                   </div>
                   <div className="relative h-64 lg:h-auto bg-white min-h-[300px]">
@@ -612,13 +628,31 @@ export default function Events() {
                   </div>
                   <div className="order-1 lg:order-2 p-8 md:p-10">
                     <h3 className="text-2xl font-bold text-[#004D83] mb-2">
-                      CAD Design Event - CADATHON – Sketch the Spark, Draft the Future
+                      CAD Design Event - CADATHON – Sketch the Spark, Draft the
+                      Future
                     </h3>
                     <p className="text-sm text-[#0066A1] font-semibold mb-4">
                       Date: 18/09/2025
                     </p>
                     <p className="text-gray-700 leading-8 text-base">
-                      CAD Student Club of Chamos Matrusantha Department of Mechanical Engineering organised a competition of modelling and assembly of components using Solidworks software titled "CADATHON" on 18th September, 2025 for Mechanical Engineering students from various universities across the Anand region. The event was organized with our industrial partner Engineering Technique, Vadodara. The theme of the event was "Sketch the Spark, Draft the Future", focusing on testing students' creativity, speed, and design thinking skills in CAD modeling within a limited time frame. The event received enthusiastic participation with students showcasing innovative design solutions. The competition created a healthy environment of learning, collaboration, and competitive spirit. Mr. Gaurav Patel from Engineering Technique was invited for evaluation and judging the event. The total prize pool of ₹ 6500 was awarded to the winners, and certificates were distributed to all participants.
+                      CAD Student Club of Chamos Matrusantha Department of
+                      Mechanical Engineering organised a competition of
+                      modelling and assembly of components using Solidworks
+                      software titled "CADATHON" on 18th September, 2025 for
+                      Mechanical Engineering students from various universities
+                      across the Anand region. The event was organized with our
+                      industrial partner Engineering Technique, Vadodara. The
+                      theme of the event was "Sketch the Spark, Draft the
+                      Future", focusing on testing students' creativity, speed,
+                      and design thinking skills in CAD modeling within a
+                      limited time frame. The event received enthusiastic
+                      participation with students showcasing innovative design
+                      solutions. The competition created a healthy environment
+                      of learning, collaboration, and competitive spirit. Mr.
+                      Gaurav Patel from Engineering Technique was invited for
+                      evaluation and judging the event. The total prize pool of
+                      ₹ 6500 was awarded to the winners, and certificates were
+                      distributed to all participants.
                     </p>
                   </div>
                 </div>
@@ -629,13 +663,31 @@ export default function Events() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                   <div className="p-8 md:p-10">
                     <h3 className="text-2xl font-bold text-[#004D83] mb-2">
-                      Numerical Modeling of Welding and Additive Manufacturing (Expert Talk)
+                      Numerical Modeling of Welding and Additive Manufacturing
+                      (Expert Talk)
                     </h3>
                     <p className="text-sm text-[#0066A1] font-semibold mb-4">
                       Date: 25/08/2025
                     </p>
                     <p className="text-gray-700 leading-8 text-base">
-                      This expert talk on "Numerical Modeling of Welding and Additive Manufacturing" on August 25, 2025, for second, third, and final year B.Tech. Mechanical Engineering students. The session was delivered by Dr. Amit Arora, Associate Professor in the Materials Engineering Department at IIT Gandhinagar, who also leads the Advanced Materials Processing Research Group. During the session, Dr. Arora provided an in-depth overview of the fundamentals and applications of numerical modeling in understanding welding and additive manufacturing. Through case studies and examples from his research group, he showcased how numerical simulations are used to design new alloys, optimize printing strategies, and achieve high-performance components. The talk concluded with a vote of thanks, acknowledging Dr. Arora's efforts in sharing his expertise and motivating students to explore research in welding, additive manufacturing, and simulation-based engineering.
+                      This expert talk on "Numerical Modeling of Welding and
+                      Additive Manufacturing" on August 25, 2025, for second,
+                      third, and final year B.Tech. Mechanical Engineering
+                      students. The session was delivered by Dr. Amit Arora,
+                      Associate Professor in the Materials Engineering
+                      Department at IIT Gandhinagar, who also leads the Advanced
+                      Materials Processing Research Group. During the session,
+                      Dr. Arora provided an in-depth overview of the
+                      fundamentals and applications of numerical modeling in
+                      understanding welding and additive manufacturing. Through
+                      case studies and examples from his research group, he
+                      showcased how numerical simulations are used to design new
+                      alloys, optimize printing strategies, and achieve
+                      high-performance components. The talk concluded with a
+                      vote of thanks, acknowledging Dr. Arora's efforts in
+                      sharing his expertise and motivating students to explore
+                      research in welding, additive manufacturing, and
+                      simulation-based engineering.
                     </p>
                   </div>
                   <div className="relative h-64 lg:h-auto bg-white">
@@ -662,13 +714,36 @@ export default function Events() {
                   </div>
                   <div className="order-1 lg:order-2 p-8 md:p-10">
                     <h3 className="text-2xl font-bold text-[#004D83] mb-2">
-                      Faculty Development Program on SOLIDWORKS Modelling & Simulation
+                      Faculty Development Program on SOLIDWORKS Modelling &
+                      Simulation
                     </h3>
                     <p className="text-sm text-[#0066A1] font-semibold mb-4">
                       Date: 02/06/2025 to 06/06/2025
                     </p>
                     <p className="text-gray-700 leading-8 text-base">
-                      In a continued effort to align academic excellence with the evolving needs of the industry, CHARUSAT remains committed to preparing students for real-world challenges. Recognizing the importance of staying current with technological advancements, the university also ensures its faculty members continuously upgrade their technical knowledge. As part of this initiative, the Department of Mechanical Engineering, under the aegis of CHAMOS Matrusanstha, organized a Faculty Development Program (FDP) on "SOLIDWORKS Modelling & Simulation" from June 02–06, 2025, in collaboration with Engineering Technique, Vadodara. The sessions were led by experts including Mr. Nilesh Wakode, Industry Consultant Manager at Dassault Systèmes India, and three professionals from Engineering Technique — Mr. Ashutosh Rajput (Design Expert – Technical Lead), Mr. Dhruval Parmar (Application Engineer – CAD), and Mr. Gaurav Patel (Application Engineer – Simulation). The week-long FDP aimed to enhance the technical proficiency of faculty members in advanced 3D modelling and simulation techniques using SOLIDWORKS. The program included hands-on sessions, demonstrations, and case studies tailored to bridge the gap between academic instruction and industrial practices.
+                      In a continued effort to align academic excellence with
+                      the evolving needs of the industry, CHARUSAT remains
+                      committed to preparing students for real-world challenges.
+                      Recognizing the importance of staying current with
+                      technological advancements, the university also ensures
+                      its faculty members continuously upgrade their technical
+                      knowledge. As part of this initiative, the Department of
+                      Mechanical Engineering, under the aegis of CHAMOS
+                      Matrusanstha, organized a Faculty Development Program
+                      (FDP) on "SOLIDWORKS Modelling & Simulation" from June
+                      02–06, 2025, in collaboration with Engineering Technique,
+                      Vadodara. The sessions were led by experts including Mr.
+                      Nilesh Wakode, Industry Consultant Manager at Dassault
+                      Systèmes India, and three professionals from Engineering
+                      Technique — Mr. Ashutosh Rajput (Design Expert – Technical
+                      Lead), Mr. Dhruval Parmar (Application Engineer – CAD),
+                      and Mr. Gaurav Patel (Application Engineer – Simulation).
+                      The week-long FDP aimed to enhance the technical
+                      proficiency of faculty members in advanced 3D modelling
+                      and simulation techniques using SOLIDWORKS. The program
+                      included hands-on sessions, demonstrations, and case
+                      studies tailored to bridge the gap between academic
+                      instruction and industrial practices.
                     </p>
                   </div>
                 </div>
@@ -685,7 +760,21 @@ export default function Events() {
                       Date: 12/04/2025
                     </p>
                     <p className="text-gray-700 leading-8 text-base">
-                      CHAMOS Matrusanstha Department of Mechanical Engineering organized a one-day workshop on "CAD Modeling & Drafting" on 12th April 2025. The sessions of workshop were conducted by Mr. Naimesh Shetiya, Managing Director, Sopan Institute of Engineering & Design and Founder & Director, Jenik Engineering Services and Dr. Punit Patel, Assistant Professor, Department of Mechanical Engineering. 509 participants from the Second Semester of B.Tech. CE/IT/CSE/AIML/EC have participated in the workshop. The sessions explore techniques of how to make modelling and drafting for engineering components using CAD software such as Fusion 360 & SolidWorks. It also discovers how to make part and assembly drawings for various engineering objects. Moreover, it explores the concept of rendering and animation concepts to demonstrate the object.
+                      CHAMOS Matrusanstha Department of Mechanical Engineering
+                      organized a one-day workshop on "CAD Modeling & Drafting"
+                      on 12th April 2025. The sessions of workshop were
+                      conducted by Mr. Naimesh Shetiya, Managing Director, Sopan
+                      Institute of Engineering & Design and Founder & Director,
+                      Jenik Engineering Services and Dr. Punit Patel, Assistant
+                      Professor, Department of Mechanical Engineering. 509
+                      participants from the Second Semester of B.Tech.
+                      CE/IT/CSE/AIML/EC have participated in the workshop. The
+                      sessions explore techniques of how to make modelling and
+                      drafting for engineering components using CAD software
+                      such as Fusion 360 & SolidWorks. It also discovers how to
+                      make part and assembly drawings for various engineering
+                      objects. Moreover, it explores the concept of rendering
+                      and animation concepts to demonstrate the object.
                     </p>
                   </div>
                   <div className="relative h-64 lg:h-auto bg-white">
@@ -712,13 +801,31 @@ export default function Events() {
                   </div>
                   <div className="order-1 lg:order-2 p-8 md:p-10">
                     <h3 className="text-2xl font-bold text-[#004D83] mb-2">
-                      Industrial Visit at Adani Industries (Power, Solar, Wind, Wilmar, Port, SEZ), at Mundra, Kuchh
+                      Industrial Visit at Adani Industries (Power, Solar, Wind,
+                      Wilmar, Port, SEZ), at Mundra, Kuchh
                     </h3>
                     <p className="text-sm text-[#0066A1] font-semibold mb-4">
                       Date: 04/04/2025 to 05/04/2025
                     </p>
                     <p className="text-gray-700 leading-8 text-base">
-                      The CHAMOS Matrusanstha Department of Mechanical Engineering has organized two day industry visit at various Adani Industries (Power, Solar, Wind, Wilmar, Port, SEZ) at Mundra, Kutchh, during 4th & 5th April, 2025 under Project Udan scheme of Adani Foundation. Total 47 students of B. Tech. Mechanical Engineering 4th & 6th semester and M.Tech. AMT 2nd semester along with 4 staff members have participated in this visit. Adani Group is a diversified organisation in India comprising 10 publicly traded companies. It has created a world class transport and utility infrastructure portfolio that has a pan-India presence. Students gained insights into the functioning and integration of advanced technologies used in thermal power generation, port logistics, oil refining, and solar power production. The visit enhanced students' understanding of mechanical engineering applications in industrial environments, boosting their interest and readiness for future industry roles.
+                      The CHAMOS Matrusanstha Department of Mechanical
+                      Engineering has organized two day industry visit at
+                      various Adani Industries (Power, Solar, Wind, Wilmar,
+                      Port, SEZ) at Mundra, Kutchh, during 4th & 5th April, 2025
+                      under Project Udan scheme of Adani Foundation. Total 47
+                      students of B. Tech. Mechanical Engineering 4th & 6th
+                      semester and M.Tech. AMT 2nd semester along with 4 staff
+                      members have participated in this visit. Adani Group is a
+                      diversified organisation in India comprising 10 publicly
+                      traded companies. It has created a world class transport
+                      and utility infrastructure portfolio that has a pan-India
+                      presence. Students gained insights into the functioning
+                      and integration of advanced technologies used in thermal
+                      power generation, port logistics, oil refining, and solar
+                      power production. The visit enhanced students'
+                      understanding of mechanical engineering applications in
+                      industrial environments, boosting their interest and
+                      readiness for future industry roles.
                     </p>
                   </div>
                 </div>

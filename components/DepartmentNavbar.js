@@ -90,26 +90,27 @@ export default function DepartmentNavbar() {
       href: "https://drive.google.com/drive/folders/1EWfAd0mJ3MIVNA7Ct3XnHfS6aKpG2NeJ",
       isExternal: true,
       icon: BookOpen,
-      description: "Academic schedules and important dates",
+      // description: "Academic schedules and important dates",
     },
     {
       name: "University Result",
       href: "https://support.charusat.edu.in/Uniexamresult/",
       isExternal: true,
       icon: ExternalLink,
-      description: "View university exam results",
+      // description: "View university exam results",
     },
     {
       name: "Fees Payment",
       href: "https://support.charusat.edu.in/FeesPaymentApp/",
       isExternal: true,
       icon: Download,
-      description: "Online fee payment portal",
+      // description: "Online fee payment portal",
     },
     {
       name: "LOR Request",
       icon: GraduationCap,
-      // no href for now
+      href: "http://136.233.130.148:8082/lor_me/",
+      isExternal: true,
     },
     {
       name: "Download Forms",
@@ -117,6 +118,27 @@ export default function DepartmentNavbar() {
       isExternal: true,
       icon: Download,
       // intentionally no description
+    },
+    {
+      name: "Question Paper",
+      href: "https://scpit.knimbus.com/portal/v2/custom/questions",
+      isExternal: true,
+      icon: ExternalLink,
+      // description: "Access past question papers",
+    },
+    {
+      name: "Syllabus",
+      href: "https://drive.google.com/drive/folders/1vwctetjp51RjdM1urZA0nlHDkmJmMDm4",
+      isExternal: true,
+      icon: Download,
+      // description: "Program syllabi and curriculum",
+    },
+    {
+      name: "Download Brochure",
+      href: "/ME_Brochure_April_2025.pdf",
+      isExternal: true,
+      icon: ExternalLink,
+      // description: "Department brochure (PDF)",
     },
   ];
 

@@ -136,7 +136,7 @@ export default function Home() {
             </div>
 
             <a
-              href="https://drive.google.com/file/d/1PQk4W6fplXv3uHDxsNMyET4rf1-IF3l6/view"
+              href="/ME_Brochure_April_2025.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#0066A1] hover:bg-[#004D83] text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300 shadow-md hover:shadow-lg"
