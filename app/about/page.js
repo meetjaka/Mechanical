@@ -11,15 +11,13 @@ export default function AboutPage() {
   ];
 
   const btechMinors = [
-    "Robotics & Artificial Intelligence",
-    "Robotics & Internet of Things",
     "Electrical Vehicle Systems",
-    "GIS & Remote Sensing",
-    "Environmental Geotechnology",
-    "Green Technology & Sustainability Engineering",
-    "Smart Cities",
     "Artificial Intelligence & Machine Learning",
+    "GIS and Remote Sensing",
     "3D Printing",
+    "Green Technology and Sustainability Engineering",
+    "Environmental Geotechnology",
+    "Smart Cities",
   ];
 
   const programs = [
@@ -169,7 +167,7 @@ export default function AboutPage() {
                       <div className="text-xs text-gray-600 font-medium">Total Seats</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-[#004D83] mb-1">9</div>
+                      <div className="text-3xl font-bold text-[#004D83] mb-1">7</div>
                       <div className="text-xs text-gray-600 font-medium">Minor Options</div>
                     </div>
                     <div className="text-center">
@@ -245,9 +243,9 @@ export default function AboutPage() {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-2xl md:text-3xl font-bold text-[#004D83] mb-2">
-                        B.Tech. Minor Specializations
+                        B.Tech.(Mechanical): Minor and Honors Specializations
                       </h3>
-                      <p className="text-gray-600 font-medium">Choose your specialization path from 9 cutting-edge domains</p>
+                      <p className="text-gray-600 font-medium">Choose your specialization path from 7 cutting-edge domains</p>
                     </div>
                   </div>
                   

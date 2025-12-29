@@ -117,23 +117,6 @@ export default function HeroCarousel() {
               </p>
 
               {/* Action Buttons removed: Explore Programs & Research Labs */}
-
-              {/* Stats */}
-              <div className="flex flex-wrap gap-6 pt-4">
-                {slides[currentSlide].stats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-lg px-6 py-4 shadow-md"
-                  >
-                    <div className="text-3xl sm:text-4xl font-bold text-[#0066A1]">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-gray-600 font-medium mt-1">
-                      {stat.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>

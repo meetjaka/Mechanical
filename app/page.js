@@ -1048,7 +1048,7 @@ export default function Home() {
             <div className="flex justify-center">
               <div className="relative w-full max-w-4xl">
                 <img
-                  src="/cdp.png"
+                  src="/CDPC_Flowchart_Career_Development.png"
                   alt="Career Development & Placement"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
