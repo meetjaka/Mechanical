@@ -168,18 +168,19 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 mb-12">
               {/* Mini Project Evaluation */}
-              <div className="group best-practices-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#0066A1]">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 icon-spot group-hover:scale-105 transition-transform duration-300">
-                    <MessageSquare className="w-7 h-7 text-[#0066A1]" />
+              <div className="group best-practices-card relative bg-white rounded-2xl p-5 lg:p-6 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_40px_-12px_rgba(0,102,161,0.2)] transition-all duration-400 border border-gray-100/80 hover:border-[#0066A1]/30 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="relative flex items-start gap-4">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-xl flex items-center justify-center flex-shrink-0 icon-spot group-hover:shadow-[0_8px_20px_-4px_rgba(0,102,161,0.25)] transition-all duration-400">
+                    <MessageSquare className="w-6 h-6 lg:w-7 lg:h-7 text-[#0066A1]" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-[#0066A1] mb-2">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base lg:text-lg font-bold text-[#004D83] mb-1.5 group-hover:text-[#0066A1] transition-colors duration-300">
                       Mini Project Evaluation
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-500 text-sm leading-relaxed">
                       Comprehensive student assessment through hands-on mini
                       projects
                     </p>
@@ -188,16 +189,17 @@ export default function Home() {
               </div>
 
               {/* Book World Initiative */}
-              <div className="group best-practices-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#0066A1]">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 icon-spot group-hover:scale-105 transition-transform duration-300">
-                    <BookOpen className="w-7 h-7 text-[#0066A1]" />
+              <div className="group best-practices-card relative bg-white rounded-2xl p-5 lg:p-6 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_40px_-12px_rgba(0,102,161,0.2)] transition-all duration-400 border border-gray-100/80 hover:border-[#0066A1]/30 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="relative flex items-start gap-4">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-xl flex items-center justify-center flex-shrink-0 icon-spot group-hover:shadow-[0_8px_20px_-4px_rgba(0,102,161,0.25)] transition-all duration-400">
+                    <BookOpen className="w-6 h-6 lg:w-7 lg:h-7 text-[#0066A1]" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-[#0066A1] mb-2">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base lg:text-lg font-bold text-[#004D83] mb-1.5 group-hover:text-[#0066A1] transition-colors duration-300">
                       Book World Initiative
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-500 text-sm leading-relaxed">
                       Reading culture development to transform student
                       perspectives
                     </p>
@@ -206,16 +208,17 @@ export default function Home() {
               </div>
 
               {/* Staff Meditation Program */}
-              <div className="group best-practices-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-orange-500">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-orange-50 rounded-lg flex items-center justify-center flex-shrink-0 icon-spot group-hover:scale-105 transition-transform duration-300">
-                    <Users className="w-7 h-7 text-orange-500" />
+              <div className="group best-practices-card relative bg-white rounded-2xl p-5 lg:p-6 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_40px_-12px_rgba(101,68,120,0.2)] transition-all duration-400 border border-gray-100/80 hover:border-[#654478]/30 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#654478]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="relative flex items-start gap-4">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-[#654478]/10 to-[#654478]/5 rounded-xl flex items-center justify-center flex-shrink-0 icon-spot group-hover:shadow-[0_8px_20px_-4px_rgba(101,68,120,0.25)] transition-all duration-400">
+                    <Users className="w-6 h-6 lg:w-7 lg:h-7 text-[#654478]" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-orange-500 mb-2">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base lg:text-lg font-bold text-[#654478] mb-1.5 group-hover:text-[#654478] transition-colors duration-300">
                       Staff Meditation Program
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-500 text-sm leading-relaxed">
                       Wellness and mindfulness practices for faculty development
                     </p>
                   </div>
@@ -223,16 +226,17 @@ export default function Home() {
               </div>
 
               {/* Student Counseling */}
-              <div className="group best-practices-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#0066A1]">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 icon-spot group-hover:scale-105 transition-transform duration-300">
-                    <UserCheck className="w-7 h-7 text-[#0066A1]" />
+              <div className="group best-practices-card relative bg-white rounded-2xl p-5 lg:p-6 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_40px_-12px_rgba(0,102,161,0.2)] transition-all duration-400 border border-gray-100/80 hover:border-[#0066A1]/30 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="relative flex items-start gap-4">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-xl flex items-center justify-center flex-shrink-0 icon-spot group-hover:shadow-[0_8px_20px_-4px_rgba(0,102,161,0.25)] transition-all duration-400">
+                    <UserCheck className="w-6 h-6 lg:w-7 lg:h-7 text-[#0066A1]" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-[#0066A1] mb-2">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base lg:text-lg font-bold text-[#004D83] mb-1.5 group-hover:text-[#0066A1] transition-colors duration-300">
                       Student Counseling
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-500 text-sm leading-relaxed">
                       Personalized one-to-one guidance and mentoring support
                     </p>
                   </div>
@@ -240,16 +244,17 @@ export default function Home() {
               </div>
 
               {/* MOOC Integration */}
-              <div className="group best-practices-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#0066A1]">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 icon-spot group-hover:scale-105 transition-transform duration-300">
-                    <FileText className="w-7 h-7 text-[#0066A1]" />
+              <div className="group best-practices-card relative bg-white rounded-2xl p-5 lg:p-6 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_40px_-12px_rgba(0,102,161,0.2)] transition-all duration-400 border border-gray-100/80 hover:border-[#0066A1]/30 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="relative flex items-start gap-4">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-xl flex items-center justify-center flex-shrink-0 icon-spot group-hover:shadow-[0_8px_20px_-4px_rgba(0,102,161,0.25)] transition-all duration-400">
+                    <FileText className="w-6 h-6 lg:w-7 lg:h-7 text-[#0066A1]" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-[#0066A1] mb-2">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base lg:text-lg font-bold text-[#004D83] mb-1.5 group-hover:text-[#0066A1] transition-colors duration-300">
                       MOOC Integration
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-500 text-sm leading-relaxed">
                       Academic enrichment through online course platforms
                     </p>
                   </div>
@@ -257,16 +262,17 @@ export default function Home() {
               </div>
 
               {/* Digital Presence */}
-              <div className="group best-practices-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-orange-500">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-orange-50 rounded-lg flex items-center justify-center flex-shrink-0 icon-spot group-hover:scale-105 transition-transform duration-300">
-                    <Globe className="w-7 h-7 text-orange-500" />
+              <div className="group best-practices-card relative bg-white rounded-2xl p-5 lg:p-6 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_40px_-12px_rgba(101,68,120,0.2)] transition-all duration-400 border border-gray-100/80 hover:border-[#654478]/30 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#654478]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="relative flex items-start gap-4">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-[#654478]/10 to-[#654478]/5 rounded-xl flex items-center justify-center flex-shrink-0 icon-spot group-hover:shadow-[0_8px_20px_-4px_rgba(101,68,120,0.25)] transition-all duration-400">
+                    <Globe className="w-6 h-6 lg:w-7 lg:h-7 text-[#654478]" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-orange-500 mb-2">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base lg:text-lg font-bold text-[#654478] mb-1.5 group-hover:text-[#654478] transition-colors duration-300">
                       Digital Presence
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-500 text-sm leading-relaxed">
                       Department website and personal academic blogs
                     </p>
                   </div>
@@ -274,16 +280,17 @@ export default function Home() {
               </div>
 
               {/* Google Classroom */}
-              <div className="group best-practices-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#0066A1]">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 icon-spot group-hover:scale-105 transition-transform duration-300">
-                    <Monitor className="w-7 h-7 text-[#0066A1]" />
+              <div className="group best-practices-card relative bg-white rounded-2xl p-5 lg:p-6 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_40px_-12px_rgba(0,102,161,0.2)] transition-all duration-400 border border-gray-100/80 hover:border-[#0066A1]/30 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="relative flex items-start gap-4">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-xl flex items-center justify-center flex-shrink-0 icon-spot group-hover:shadow-[0_8px_20px_-4px_rgba(0,102,161,0.25)] transition-all duration-400">
+                    <Monitor className="w-6 h-6 lg:w-7 lg:h-7 text-[#0066A1]" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-[#0066A1] mb-2">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base lg:text-lg font-bold text-[#004D83] mb-1.5 group-hover:text-[#0066A1] transition-colors duration-300">
                       Google Classroom
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-500 text-sm leading-relaxed">
                       Enhanced learning through digital classroom tools
                     </p>
                   </div>
@@ -291,16 +298,17 @@ export default function Home() {
               </div>
 
               {/* Industry Collaboration */}
-              <div className="group best-practices-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#0066A1]">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 icon-spot group-hover:scale-105 transition-transform duration-300">
-                    <BarChart className="w-7 h-7 text-[#0066A1]" />
+              <div className="group best-practices-card relative bg-white rounded-2xl p-5 lg:p-6 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_40px_-12px_rgba(0,102,161,0.2)] transition-all duration-400 border border-gray-100/80 hover:border-[#0066A1]/30 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="relative flex items-start gap-4">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-xl flex items-center justify-center flex-shrink-0 icon-spot group-hover:shadow-[0_8px_20px_-4px_rgba(0,102,161,0.25)] transition-all duration-400">
+                    <BarChart className="w-6 h-6 lg:w-7 lg:h-7 text-[#0066A1]" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-[#0066A1] mb-2">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base lg:text-lg font-bold text-[#004D83] mb-1.5 group-hover:text-[#0066A1] transition-colors duration-300">
                       Industry Collaboration
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-500 text-sm leading-relaxed">
                       Faculty-industry partnerships for practical exposure
                     </p>
                   </div>
@@ -308,16 +316,17 @@ export default function Home() {
               </div>
 
               {/* Expert Sessions */}
-              <div className="group best-practices-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-orange-500">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-orange-50 rounded-lg flex items-center justify-center flex-shrink-0 icon-spot group-hover:scale-105 transition-transform duration-300">
-                    <Users className="w-7 h-7 text-orange-500" />
+              <div className="group best-practices-card relative bg-white rounded-2xl p-5 lg:p-6 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_40px_-12px_rgba(101,68,120,0.2)] transition-all duration-400 border border-gray-100/80 hover:border-[#654478]/30 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#654478]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="relative flex items-start gap-4">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-[#654478]/10 to-[#654478]/5 rounded-xl flex items-center justify-center flex-shrink-0 icon-spot group-hover:shadow-[0_8px_20px_-4px_rgba(101,68,120,0.25)] transition-all duration-400">
+                    <Users className="w-6 h-6 lg:w-7 lg:h-7 text-[#654478]" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-orange-500 mb-2">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base lg:text-lg font-bold text-[#654478] mb-1.5 group-hover:text-[#654478] transition-colors duration-300">
                       Expert Sessions
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-500 text-sm leading-relaxed">
                       Industry expert talks for student knowledge enhancement
                     </p>
                   </div>
@@ -344,12 +353,12 @@ export default function Home() {
               </div>
 
               {/* Mission Card */}
-              <div className="group bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border-2 border-gray-100 hover:border-orange-500">
+              <div className="group bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border-2 border-gray-100 hover:border-[#654478]">
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="w-16 h-16 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Target className="w-8 h-8 text-orange-500" />
+                  <div className="w-16 h-16 bg-[#654478]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Target className="w-8 h-8 text-[#654478]" />
                   </div>
-                  <h3 className="text-2xl font-bold text-orange-500 pt-3">
+                  <h3 className="text-2xl font-bold text-[#654478] pt-3">
                     Mission
                   </h3>
                 </div>
@@ -362,17 +371,18 @@ export default function Home() {
             </div>
 
             {/* Program Objectives */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
               {/* Program Educational Objectives */}
-              <div className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border-2 border-gray-100 hover:border-[#0066A1]">
-                <div className="flex flex-col items-center text-center h-full">
-                  <div className="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center mb-5">
-                    <Target className="w-10 h-10 text-[#0066A1]" />
+              <div className="group program-card relative bg-white rounded-2xl p-6 lg:p-8 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_40px_-12px_rgba(0,102,161,0.2)] transition-all duration-400 border border-gray-100/80 hover:border-[#0066A1]/30 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="relative flex flex-col items-center text-center h-full">
+                  <div className="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-blue-50 to-blue-100/60 rounded-2xl flex items-center justify-center mb-5 group-hover:shadow-[0_8px_24px_-4px_rgba(0,102,161,0.3)] transition-all duration-400">
+                    <Target className="w-8 h-8 lg:w-10 lg:h-10 text-[#0066A1]" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#004D83] mb-3">
+                  <h3 className="text-lg lg:text-xl font-bold text-[#004D83] mb-3 group-hover:text-[#0066A1] transition-colors duration-300">
                     Program Educational Objectives
                   </h3>
-                  <p className="text-gray-600 text-sm mb-6 flex-grow leading-relaxed">
+                  <p className="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
                     Strategic goals defining the expected accomplishments of
                     graduates
                   </p>
@@ -380,7 +390,7 @@ export default function Home() {
                     href="/files/peo.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#0066A1] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#004D83] transition-colors duration-300 w-full justify-center"
+                    className="inline-flex items-center gap-2 bg-[#0066A1] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#004D83] hover:shadow-lg transition-all duration-300 w-full justify-center group-hover:scale-[1.02]"
                   >
                     Click Here
                     <FileText className="w-4 h-4" />
@@ -389,22 +399,23 @@ export default function Home() {
               </div>
 
               {/* Program Outcomes */}
-              <div className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border-2 border-gray-100 hover:border-orange-500">
-                <div className="flex flex-col items-center text-center h-full">
-                  <div className="w-20 h-20 bg-orange-50 rounded-2xl flex items-center justify-center mb-5">
-                    <Award className="w-10 h-10 text-orange-500" />
+              <div className="group program-card relative bg-white rounded-2xl p-6 lg:p-8 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_40px_-12px_rgba(101,68,120,0.2)] transition-all duration-400 border border-gray-100/80 hover:border-[#654478]/30 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-[#654478]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="relative flex flex-col items-center text-center h-full">
+                  <div className="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-[#654478]/10 to-[#654478]/5 rounded-2xl flex items-center justify-center mb-5 group-hover:shadow-[0_8px_24px_-4px_rgba(101,68,120,0.3)] transition-all duration-400">
+                    <Award className="w-8 h-8 lg:w-10 lg:h-10 text-[#654478]" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#004D83] mb-3">
+                  <h3 className="text-lg lg:text-xl font-bold text-[#654478] mb-3 group-hover:text-[#654478] transition-colors duration-300">
                     Program Outcomes
                   </h3>
-                  <p className="text-gray-600 text-sm mb-6 flex-grow leading-relaxed">
+                  <p className="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
                     Skills and knowledge students acquire by graduation
                   </p>
                   <a
                     href="/files/po.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-300 w-full justify-center"
+                    className="inline-flex items-center gap-2 bg-[#654478] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#533a63] hover:shadow-lg transition-all duration-300 w-full justify-center group-hover:scale-[1.02]"
                   >
                     Click Here
                     <FileText className="w-4 h-4" />
@@ -413,22 +424,23 @@ export default function Home() {
               </div>
 
               {/* Program Specific Outcomes */}
-              <div className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border-2 border-gray-100 hover:border-[#004D83]">
-                <div className="flex flex-col items-center text-center h-full">
-                  <div className="w-20 h-20 bg-gray-50 rounded-2xl flex items-center justify-center mb-5">
-                    <Zap className="w-10 h-10 text-[#004D83]" />
+              <div className="group program-card relative bg-white rounded-2xl p-6 lg:p-8 shadow-[0_2px_12px_-3px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_40px_-12px_rgba(0,77,131,0.2)] transition-all duration-400 border border-gray-100/80 hover:border-[#004D83]/30 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="relative flex flex-col items-center text-center h-full">
+                  <div className="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-blue-50 to-indigo-100/50 rounded-2xl flex items-center justify-center mb-5 group-hover:shadow-[0_8px_24px_-4px_rgba(0,77,131,0.3)] transition-all duration-400">
+                    <Zap className="w-8 h-8 lg:w-10 lg:h-10 text-[#004D83]" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#004D83] mb-3">
+                  <h3 className="text-lg lg:text-xl font-bold text-[#004D83] mb-3 group-hover:text-[#004D83] transition-colors duration-300">
                     Program Specific Outcomes
                   </h3>
-                  <p className="text-gray-600 text-sm mb-6 flex-grow leading-relaxed">
+                  <p className="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
                     Specialized competencies unique to mechanical engineering
                   </p>
                   <a
                     href="/files/pso.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#004D83] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#003366] transition-colors duration-300 w-full justify-center"
+                    className="inline-flex items-center gap-2 bg-[#004D83] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#003366] hover:shadow-lg transition-all duration-300 w-full justify-center group-hover:scale-[1.02]"
                   >
                     Click Here
                     <FileText className="w-4 h-4" />

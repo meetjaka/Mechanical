@@ -214,19 +214,38 @@ html {
 
 /* Best Practices card hover effect */
 .best-practices-card {
-  transition: transform 0.28s cubic-bezier(.2,.9,.2,1), box-shadow 0.28s cubic-bezier(.2,.9,.2,1), border-color 0.28s;
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              border-color 0.35s ease;
   will-change: transform, box-shadow;
 }
 
 .best-practices-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 12px 30px -6px var(--shadow-hover), 0 6px 12px -6px rgba(0,0,0,0.06);
+  transform: translateY(-4px);
 }
 
 .best-practices-card .icon-spot {
-  transition: transform 0.28s cubic-bezier(.2,.9,.2,1);
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+              box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .best-practices-card:hover .icon-spot {
-  transform: scale(1.08);
+  transform: scale(1.05);
+}
+
+/* Program Objectives card hover effect */
+.program-card {
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              border-color 0.35s ease;
+  will-change: transform, box-shadow;
+}
+
+.program-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Smooth transition utility */
+.transition-all.duration-400 {
+  transition-duration: 400ms;
 }
