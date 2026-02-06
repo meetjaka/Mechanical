@@ -15,13 +15,20 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Mechanical Engineering Department | CHAMOS Matrusanstha",
-  description: "Department of Mechanical Engineering - Modern facilities, research excellence, and innovative education in mechanical engineering.",
-  keywords: "mechanical engineering, research, education, FESTO, automation, materials processing",
+  description:
+    "Department of Mechanical Engineering - Modern facilities, research excellence, and innovative education in mechanical engineering.",
+  keywords:
+    "mechanical engineering, research, education, FESTO, automation, materials processing",
   author: "Mechanical Engineering Department",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export const viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
 };
 
