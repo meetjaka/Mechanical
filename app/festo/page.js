@@ -22,29 +22,6 @@ export default function FestoPage() {
           </div>
         </div>
 
-        {/* Image Section */}
-        <div className="py-16 md:py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-block px-4 py-2 bg-orange-500/10 text-orange-500 rounded-md text-sm font-semibold tracking-wide mb-3">
-                Our Facility
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#004D83] mb-3">
-                Experience <span className="text-[#0066A1]">Centre</span>
-              </h2>
-            </div>
-            <div className="relative w-full h-[350px] md:h-[450px] overflow-hidden rounded-2xl shadow-lg">
-              <Image
-                src="/festo.jpg"
-                alt="FESTO Centre of Excellence"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-
         {/* Content Section */}
         <div className="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -69,6 +46,17 @@ export default function FestoPage() {
                   improve practical experience of high tech components used in
                   factory and Industrial automation.
                 </p>
+              </div>
+
+              {/* Facility Image */}
+              <div className="mt-10 relative w-full h-[350px] md:h-[450px] overflow-hidden rounded-2xl shadow-lg">
+                <Image
+                  src="/festo.jpg"
+                  alt="FESTO Centre of Excellence"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               </div>
             </div>
 
